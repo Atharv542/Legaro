@@ -1,6 +1,7 @@
 import anantImg from "../assets/anant.jpg";
 import shivamImg from "../assets/shivam.jpg";
 import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
 
 const team = [
   {
@@ -30,12 +31,40 @@ const team = [
 ];
 
 export default function TeamSection() {
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const cardVariant = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       id="team"
       className="py-24 relative overflow-hidden bg-[hsl(220,20%,6%)] text-[hsl(210,20%,95%)] border-t border-[hsl(220,16%,16%)]"
     >
-      {/* Gold Background Glow */}
+      {/* Gold Glow */}
       <div
         className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10"
         style={{ background: "hsl(38,95%,55%)" }}
@@ -43,8 +72,14 @@ export default function TeamSection() {
 
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Header */}
-        <div className="text-center mb-16">
+        {/* Header Animation */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <span className="inline-flex px-4 py-1 text-xs tracking-widest uppercase rounded-full border border-[hsl(38,95%,55%)] text-[hsl(38,95%,55%)] mb-4">
             The Founders
           </span>
@@ -61,33 +96,41 @@ export default function TeamSection() {
             Two passionate individuals on a mission to make entrepreneurship
             accessible, exciting, and transformative for every young person.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+        >
           {team.map((member) => (
-            <div
+            <motion.div
               key={member.name}
-              className="bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02]"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow =
+              variants={cardVariant}
+              whileHover={{
+                y: -10,
+                boxShadow:
                   member.color === "blue"
-                    ? "0 8px 48px hsl(210,100%,56%,0.25)"
-                    : "0 8px 48px hsl(38,95%,55%,0.25)";
+                    ? "0 15px 60px hsl(210,100%,56%,0.25)"
+                    : "0 15px 60px hsl(38,95%,55%,0.25)",
               }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = "none";
-              }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] rounded-3xl overflow-hidden"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <img
+                <motion.img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 1.2 }}
+                  className="w-full h-full object-cover"
                 />
 
-                {/* Dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,18%,9%)] to-transparent" />
 
                 {/* Role Badge */}
@@ -126,35 +169,27 @@ export default function TeamSection() {
 
                 {/* Social Icons */}
                 <div className="flex items-center gap-3">
-                  {[
-                    { icon: Instagram, href: member.socials.instagram },
-                    { icon: Linkedin, href: member.socials.linkedin },
-                    { icon: Twitter, href: member.socials.twitter },
-                  ].map(({ icon: Icon, href }, index) => (
-                    <a
+                  {[Instagram, Linkedin, Twitter].map((Icon, index) => (
+                    <motion.a
                       key={index}
-                      href={href}
-                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] text-[hsl(220,10%,55%)] transition-all duration-200 hover:scale-110"
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color =
+                      href="#"
+                      whileHover={{
+                        scale: 1.15,
+                        color:
                           member.color === "blue"
                             ? "hsl(210,100%,56%)"
-                            : "hsl(38,95%,55%)";
+                            : "hsl(38,95%,55%)",
                       }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color =
-                          "hsl(220,10%,55%)";
-                      }}
+                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] text-[hsl(220,10%,55%)]"
                     >
                       <Icon size={16} />
-                    </a>
+                    </motion.a>
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

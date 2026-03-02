@@ -1,6 +1,35 @@
 import { Target, Zap, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const cardVariant = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section
       id="about"
@@ -16,34 +45,52 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Content */}
-          <div>
-            {/* Section Tag */}
-            <span className="inline-flex px-4 py-1 text-xs tracking-widest uppercase rounded-full border border-[hsl(210,100%,56%)] text-[hsl(210,100%,56%)] mb-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <motion.span
+              variants={fadeUp}
+              className="inline-flex px-4 py-1 text-xs tracking-widest uppercase rounded-full border border-[hsl(210,100%,56%)] text-[hsl(210,100%,56%)] mb-4"
+            >
               Our Story
-            </span>
+            </motion.span>
 
-            <h2 className="font-black text-4xl md:text-5xl leading-tight mb-6">
+            <motion.h2
+              variants={fadeUp}
+              className="font-black text-4xl md:text-5xl leading-tight mb-6"
+            >
               We Are{" "}
               <span className="text-[hsl(210,100%,56%)]">
                 Legaro
               </span>
-            </h2>
+            </motion.h2>
 
-            <p className="text-[hsl(220,10%,55%)] leading-relaxed mb-6">
+            <motion.p
+              variants={fadeUp}
+              className="text-[hsl(220,10%,55%)] leading-relaxed mb-6"
+            >
               Legaro Pvt Ltd is a dynamic company built on the belief that every
               young person has the potential to build something extraordinary.
               We bridge the gap between ambition and action through high-energy
               workshops, mentorship programmes, and one-on-one coaching sessions.
-            </p>
+            </motion.p>
 
-            <p className="text-[hsl(220,10%,55%)] leading-relaxed mb-8">
+            <motion.p
+              variants={fadeUp}
+              className="text-[hsl(220,10%,55%)] leading-relaxed mb-8"
+            >
               Born from the passion of two driven individuals — Anant and Shivam —
               Legaro was created to be more than a company. It's a movement. A
               community where curiosity meets execution, and dreams get their runway.
-            </p>
+            </motion.p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-wrap gap-4"
+            >
               <button
                 onClick={() =>
                   document
@@ -65,12 +112,17 @@ export default function AboutSection() {
               >
                 Meet the Team
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Cards */}
-          <div className="grid grid-cols-1 gap-6">
-
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 gap-6"
+          >
             {[
               {
                 icon: Target,
@@ -91,11 +143,12 @@ export default function AboutSection() {
                 type: "blue",
               },
             ].map((item) => (
-              <div
+              <motion.div
                 key={item.title}
+                variants={cardVariant}
+                whileHover={{ y: -6 }}
                 className="bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] rounded-2xl p-6 flex items-start gap-4 hover:border-[hsl(210,100%,56%)] transition-all duration-300"
               >
-                {/* Icon Box */}
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{
@@ -116,7 +169,6 @@ export default function AboutSection() {
                   />
                 </div>
 
-                {/* Text */}
                 <div>
                   <h3 className="font-bold text-base mb-1">
                     {item.title}
@@ -125,10 +177,10 @@ export default function AboutSection() {
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
+          </motion.div>
 
-          </div>
         </div>
       </div>
     </section>
