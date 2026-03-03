@@ -188,7 +188,7 @@ export default function WorkshopsSection() {
                   </div>
                 </div>
 
-                <h3 className="font-black text-4xl mb-6 leading-tight">
+                <h3 className="font-black text-2xl md:text-4xl mb-6 leading-tight">
                   {expandedWorkshop.title}
                 </h3>
 
