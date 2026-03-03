@@ -1,12 +1,58 @@
-import { ArrowDown, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import heroBg from "../assets/hero-bg.jpg";
 
-export default function HeroSection() {
-  const scrollToAbout = () => {
-    document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
-  };
+/* =========================
+   Typing Animation Component
+   (No layout shift version)
+========================= */
 
+const words = ["Builders", "Innovators", "Dreamers","Entrepreneurs"];
+
+function TypingWords() {
+  const [index, setIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[index];
+    let timeout;
+
+    if (!deleting && text.length < currentWord.length) {
+      timeout = setTimeout(() => {
+        setText(currentWord.slice(0, text.length + 1));
+      }, 80);
+    } 
+    else if (!deleting && text.length === currentWord.length) {
+      timeout = setTimeout(() => setDeleting(true), 1200);
+    } 
+    else if (deleting && text.length > 0) {
+      timeout = setTimeout(() => {
+        setText(text.slice(0, -1));
+      }, 50);
+    } 
+    else if (deleting && text.length === 0) {
+      setDeleting(false);
+      setIndex((prev) => (prev + 1) % words.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, deleting, index]);
+
+  return (
+    <span className="relative inline-block  min-w-[180px] md:min-w-[220px] text-left text-[hsl(210,96%,64%)]">
+      {text}
+      <span className="ml-1 animate-pulse">|</span>
+    </span>
+  );
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+export default function HeroSection() {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: (delay = 0) => ({
@@ -64,7 +110,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="font-black text-5xl md:text-7xl lg:text-8xl leading-none mb-6">
+        <h1 className="font-black text-5xl md:text-7xl lg:text-8xl leading-none mb-4">
 
           <motion.span
             initial="hidden"
@@ -96,6 +142,17 @@ export default function HeroSection() {
             Come Alive
           </motion.span>
         </h1>
+
+        {/* Typing Line (For stays fixed) */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.7}
+          className="text-2xl md:text-3xl  font-bold mb-6"
+        >
+          For <TypingWords />
+        </motion.div>
 
         {/* Subheadline */}
         <motion.p
