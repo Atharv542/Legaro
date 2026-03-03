@@ -197,7 +197,7 @@ export default function WorkshopsSection() {
                 </p>
 
                 <div className="flex gap-4">
-                  <div className={`flex items-center gap-2 px-5 py-3 rounded-xl  bg-gray-900 text-sm  ${
+                  <div className={`flex items-center gap-2 px-6 py-3 md:px-5 md:py-3 rounded-xl  bg-gray-900 text-sm  ${
                       isBlue
                         ? "border border-blue-400/50"
                         :"border border-yellow-400/50"
@@ -210,7 +210,7 @@ export default function WorkshopsSection() {
                     {expandedWorkshop.duration}
                   </div>
 
-                  <div className={`flex items-center gap-2 px-5 py-3 rounded-xl   text-sm  ${
+                  <div className={`flex items-center gap-2 px-6 py-3 md:px-5 md:py-3 rounded-xl   text-sm  ${
                       isBlue
                         ? "border border-blue-400/50 "
                         :"border border-yellow-400/50"
@@ -228,7 +228,7 @@ export default function WorkshopsSection() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className={`self-center px-6 py-3 rounded-2xl font-bold text-lg flex mt-47 -mr-6 items-center gap-3 ${
+                className={`self-center px-6 py-3 rounded-2xl font-bold text-lg flex mt-10 md:mt-47 -mr-6 items-center gap-3 ${
                   isBlue
                     ? "bg-blue-600 hover:bg-blue-500"
                     : "bg-yellow-500 hover:bg-yellow-400 text-black"
@@ -267,7 +267,7 @@ export default function WorkshopsSection() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-8 py-4 cursor-pointer rounded-2xl font-bold text-lg bg-blue-600 hover:bg-blue-500"
+            className="inline-flex items-center gap-3  md:px-8 md:py-4 cursor-pointer rounded-2xl font-bold text-md px-6 py-3 md:text-lg bg-blue-600 hover:bg-blue-500"
           >
             Book a Workshop via Exly
             <ArrowRight size={18} />
