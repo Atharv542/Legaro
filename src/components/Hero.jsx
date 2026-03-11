@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Instagram, Linkedin, Sparkles, Quote, ArrowRight, Phone } from "lucide-react";
-import shivamImg from "../assets/shivam.jpg";
-import ishaanImg from "../assets/anant.jpg";
+import shivamImg from "../assets/Shivam.png";
+import ishaanImg from "../assets/Ishan.png";
 import bgImage from "../assets/hero-bg1.jpg";
 
 /* ========================= */

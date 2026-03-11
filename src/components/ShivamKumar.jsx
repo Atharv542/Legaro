@@ -112,15 +112,10 @@ export default function TeamMemberSection() {
             {/* SOCIAL ICONS */}
             <div className="flex items-center gap-4 mb-8">
 
-              <a
-                href="#"
-                className="w-11 h-11 rounded-xl border border-neutral-800 bg-neutral-800/50 flex items-center justify-center text-neutral-400 hover:text-white transition"
-              >
-                <Linkedin size={20} />
-              </a>
+             
 
               <a
-                href="#"
+                href="https://www.instagram.com/onlinebnda?igsh=MWVkZ2E1M251a2p5MA%3D%3D&utm_source=qr" target="_blank"
                 className="w-11 h-11 rounded-xl border border-neutral-800 bg-neutral-800/50 flex items-center justify-center text-neutral-400 hover:text-white transition"
               >
                 <Instagram size={20} />
