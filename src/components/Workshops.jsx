@@ -58,7 +58,7 @@ export default function WorkshopsSection() {
   const isBlue = expandedWorkshop.color === "blue";
 
   return (
-    <section className="py-24 bg-gray-950 text-white overflow-hidden">
+    <section id="workshops" className="py-24 bg-gray-950 text-white overflow-hidden">
       {/* HEADER */}
       <div className="max-w-6xl mx-auto px-6 text-center mb-16">
         <span className="inline-flex items-center gap-2 px-4 py-1 text-xs uppercase tracking-widest rounded-full border border-blue-500 text-blue-400 mb-6">

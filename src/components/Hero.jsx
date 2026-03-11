@@ -1,204 +1,246 @@
-import { Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import heroBg from "../assets/hero-bg.jpg";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Instagram, Linkedin, Sparkles, Quote, ArrowRight, Phone } from "lucide-react";
+import shivamImg from "../assets/shivam.jpg";
+import ishaanImg from "../assets/anant.jpg";
+import bgImage from "../assets/hero-bg1.jpg";
 
-/* =========================
-   Typing Animation Component
-   (No layout shift version)
-========================= */
+/* ========================= */
+/*   Founder Data            */
+/* ========================= */
 
-const words = ["Builders", "Innovators", "Dreamers","Entrepreneurs"];
+const founders = [
+  {
+    name: "Shivam",
+    role: "Founder & CEO",
+    tagline: "Visionary. Builder. Leader.",
+    bio: "Shivam built Legaro with a mission to empower young entrepreneurs and turn bold ideas into thriving businesses.",
+    quote: "Every great business starts as a bold, uncomfortable idea.",
+    image: shivamImg,
+    accentColor: "#4aa3ff",
+    instagram: "https://www.instagram.com/theshivammgarg?igsh=MXhmMzBlNXZ1c3liMw==",
+    linkedin: "https://www.linkedin.com/in/shivam-garg-aaa51130a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  },
+  {
+    name: "Ishaan",
+    role: "Co-Founder & COO",
+    tagline: "Strategist. Creator. Mentor.",
+    bio: "Ishaan brings strategic clarity and creativity to every program at Legaro, ensuring every founder leaves with real momentum.",
+    quote: "Growth happens at the edge of your comfort zone.",
+    image: ishaanImg,
+    accentColor: "#f2c46d",
+    instagram: "https://www.instagram.com/theishaangarg?igsh=dWM0OGduYjR4Y2xi",
+    linkedin: "https://www.linkedin.com/in/ishan-garg-603a4a317?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  },
+];
 
-function TypingWords() {
-  const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
+/* ========================= */
+/*   Founder Card            */
+/* ========================= */
 
-  useEffect(() => {
-    const currentWord = words[index];
-    let timeout;
-
-    if (!deleting && text.length < currentWord.length) {
-      timeout = setTimeout(() => {
-        setText(currentWord.slice(0, text.length + 1));
-      }, 80);
-    } 
-    else if (!deleting && text.length === currentWord.length) {
-      timeout = setTimeout(() => setDeleting(true), 1200);
-    } 
-    else if (deleting && text.length > 0) {
-      timeout = setTimeout(() => {
-        setText(text.slice(0, -1));
-      }, 50);
-    } 
-    else if (deleting && text.length === 0) {
-      setDeleting(false);
-      setIndex((prev) => (prev + 1) % words.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, deleting, index]);
+function FounderCard({ founder }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
   return (
-    <span className="relative inline-block  min-w-[180px] md:min-w-[220px] text-left text-[hsl(210,96%,64%)]">
-      {text}
-      <span className="ml-1 animate-pulse">|</span>
-    </span>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 80 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="grid md:grid-cols-2 gap-12 items-center"
+    >
+      {/* Image */}
+      <div className="flex justify-center relative">
+
+        <img
+          src={founder.image}
+          alt={founder.name}
+          className="rounded-3xl max-w-sm object-cover shadow-2xl"
+        />
+
+      </div>
+
+      {/* Text */}
+      <div className="flex flex-col gap-5 text-white">
+
+        <span
+          className="uppercase tracking-[0.25em] text-xs"
+          style={{ color: founder.accentColor }}
+        >
+          {founder.tagline}
+        </span>
+
+        <h2 className="text-5xl font-black">
+          {founder.name}
+        </h2>
+
+        <p
+          className="text-lg font-medium"
+          style={{
+            background:
+              "linear-gradient(90deg,#4aa3ff,#f2c46d)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          {founder.role}
+        </p>
+
+        <div
+          className="border-l-4 pl-4 italic"
+          style={{ borderColor: founder.accentColor }}
+        >
+          <Quote size={18} className="opacity-40 mb-2" />
+          {founder.quote}
+        </div>
+
+        <p className="text-gray-300 leading-relaxed">
+          {founder.bio}
+        </p>
+
+        {/* SOCIAL ICONS */}
+
+        <div className="flex items-center gap-4 mt-2">
+
+          <a
+            href={founder.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
+            style={{
+              border: "1px solid #1B1F32",
+              background: "rgba(20,22,35,0.5)",
+              color: "#9CA3AF",
+            }}
+          >
+            <Linkedin size={20} />
+          </a>
+
+          <a
+            href={founder.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300"
+            style={{
+              border: "1px solid #1B1F32",
+              background: "rgba(20,22,35,0.5)",
+              color: "#9CA3AF",
+            }}
+          >
+            <Instagram size={20} />
+          </a>
+
+        </div>
+
+        {/* CTA BUTTON */}
+
+       
+
+      </div>
+    </motion.div>
   );
 }
 
-/* =========================
-   Hero Section
-========================= */
+/* ========================= */
+/*   About Section           */
+/* ========================= */
 
-export default function HeroSection() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (delay = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        delay,
-        ease: "easeOut",
-      },
-    }),
-  };
+export default function AboutSection() {
+
+  const heroRef = useRef(null);
+  const heroInView = useInView(heroRef, { once: true });
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[hsl(220,20%,6%)] text-[hsl(210,20%,95%)]"
+      className="min-h-screen text-white py-24"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      {/* Background Image */}
+
+      {/* Header */}
+
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+        ref={heroRef}
+        className="text-center pb-24 px-4"
+      >
 
-      {/* Dark Overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, hsl(220,20%,6%,0.4) 0%, hsl(220,20%,6%,0.7) 60%, hsl(220,20%,6%) 100%)",
-        }}
-      />
-
-      {/* Floating Gold Orb */}
-      <div
-        className="absolute bottom-1/3 right-1/3 w-96 h-96 rounded-full opacity-20 blur-3xl animate-pulse"
-        style={{ background: "hsl(38,95%,40%)" }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto text-center px-4">
-
-        {/* Tag */}
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={0.1}
+          initial={{ opacity: 0, y: 20 }}
+          animate={heroInView ? { opacity: 1, y: 0 } : {}}
           className="flex justify-center mb-6"
         >
-          <span className="flex items-center gap-2 px-4 py-1 text-xs tracking-widest uppercase rounded-full border border-[hsl(210,100%,56%)] text-[hsl(210,100%,56%)]">
-            <Sparkles size={12} />
-            Welcome to Legaro Pvt Ltd
+          <span className="flex items-center gap-2 px-5 py-2 text-xs tracking-widest uppercase rounded-full border border-blue-500/30 text-blue-400">
+            <Sparkles size={14} />
+            Leadership Team
           </span>
         </motion.div>
 
-        {/* Headline */}
-        <h1 className="font-black text-5xl md:text-7xl lg:text-8xl leading-none mb-4">
 
-          <motion.span
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={0.2}
-            className="block"
-          >
-            Where
-          </motion.span>
-
-          <motion.span
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={0.4}
-            className="block text-[hsl(210,96%,64%)]"
-          >
-            Ideas
-          </motion.span>
-
-          <motion.span
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={0.6}
-            className="block"
-          >
-            Come Alive
-          </motion.span>
-        </h1>
-
-        {/* Typing Line (For stays fixed) */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={0.7}
-          className="text-2xl md:text-3xl  font-bold mb-6"
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={heroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-black leading-tight mb-6"
         >
-          For <TypingWords />
-        </motion.div>
 
-        {/* Subheadline */}
+          <span className="block">
+            The Visionaries
+          </span>
+
+          <span
+            style={{
+              background:
+                "linear-gradient(135deg,#4aa3ff,#f2c46d)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Powering Legaro
+          </span>
+
+        </motion.h1>
+
+
         <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={0.8}
-          className="max-w-xl mx-auto text-base md:text-lg text-[hsl(220,10%,55%)] mb-10 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={heroInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.2 }}
+          className="max-w-xl mx-auto text-gray-400 text-lg"
         >
-          Empowering the next generation of entrepreneurs through immersive
-          workshops, personalised mentorship, and bold creative thinking.
+          Entrepreneurs, strategists, and mentors dedicated to building
+          the next generation of founders and innovators.
         </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          custom={1}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <button
-            onClick={() =>
-              document
-                .querySelector("#workshops")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="flex items-center cursor-pointer justify-center gap-2 px-6 py-3 rounded-xl font-semibold bg-[hsl(210,100%,56%)] text-black hover:brightness-110 transition"
-          >
-            <Sparkles size={16} />
-            Explore Workshops
-          </button>
 
-          <button
-            onClick={() =>
-              document
-                .querySelector("#call")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            className="px-6 py-3 rounded-xl cursor-pointer font-semibold border border-[hsl(220,16%,16%)] text-[hsl(210,20%,95%)] hover:bg-[hsl(220,18%,9%)] transition"
-          >
-            Book a 1:1 Call
-          </button>
-        </motion.div>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={heroInView ? { scaleX: 1 } : {}}
+          transition={{ duration: 1 }}
+          className="mx-auto mt-10 h-[2px] w-48"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #4aa3ff, #f2c46d, transparent)",
+          }}
+        />
 
       </div>
+
+
+      {/* FOUNDERS */}
+
+      <div className="max-w-6xl mx-auto px-6 flex flex-col gap-32">
+
+        {founders.map((founder) => (
+          <FounderCard key={founder.name} founder={founder} />
+        ))}
+
+      </div>
+
     </section>
   );
 }
