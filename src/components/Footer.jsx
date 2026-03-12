@@ -132,18 +132,7 @@ export default function Footer() {
 
             </ul>
 
-            {/* Social Icons */}
-            <div className="flex gap-3">
-              {[Instagram, Linkedin, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-xl flex items-center justify-center border border-[hsl(220,16%,16%)] bg-[hsl(220,18%,9%)] text-[hsl(220,10%,55%)] transition-all duration-200 hover:scale-110 hover:text-[hsl(210,100%,56%)]"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
+           
 
           </div>
 

@@ -146,7 +146,7 @@ export default function BrandsSection() {
           </button>
 
           <button
-            className="flex items-center gap-2 px-7 py-3 hover:border hover:border-[#F6A926]/50 hover:bg-[#F6A926]/5 rounded-xl border border-[#1B1F32] cursor-pointer font-semibold transition"
+            className="flex items-center gap-2 px-7 py-3 hover:border hover:border-[#F6A926]/50 hover:bg-[#F6A926]/5 rounded-xl border border-[#45528d] cursor-pointer font-semibold transition"
             onClick={() => navigate("/kidfluencer-deck")}
           >
             View Kidfluencer Deck
