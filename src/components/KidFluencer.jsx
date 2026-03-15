@@ -115,7 +115,7 @@ const kids = [
   {
     id: 5,
     name: "sia_3vedi",
-    age: 7,
+    age: 5,
     image: kid5,
     niche: "Kidfluencers",
     location: "Bengaluru",
@@ -200,7 +200,7 @@ const kids = [
   {
     id: 10,
     name: "ishakapoor244",
-    age: 8,
+    age: 7,
     image: kid10,
     niche: "Kidfluencers",
     location: "Gurgaon",
