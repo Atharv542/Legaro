@@ -2,7 +2,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Instagram, Linkedin, Sparkles, Quote } from "lucide-react";
 import shivamImg from "../assets/Shivam2.jpeg";
-import ishaanImg from "../assets/ishan2.jpg";
 import bgImage from "../assets/hero-bg1.jpg";
 
 /* ========================= */
@@ -22,12 +21,12 @@ const founders = [
     linkedin: "https://www.linkedin.com/in/shivam-garg-aaa51130a",
   },
   {
-    name: "Ishan",
+    name: "Ishan Garg",
     role: "Co-Founder & CMO",
     tagline: "Executer. Field-leader. Right hand.",
     bio: "I lead the execution at Legaro and believe in the spirit of Yuimaaru.",
     quote: "Growth happens at the edge of your comfort zone.",
-    image: ishaanImg,
+    image: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773596138/ishan2_y7ysbu.png",
     accentColor: "#f2c46d",
     instagram: "https://www.instagram.com/theishaangarg",
     linkedin: "https://www.linkedin.com/in/ishan-garg-603a4a317",
