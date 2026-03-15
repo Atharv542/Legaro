@@ -1,13 +1,10 @@
-
 import {
   Calendar,
   Clock,
   Users,
   ArrowRight,
   Sparkles,
-  Video,
-  Phone,
-  Palette
+  Video
 } from "lucide-react";
 import { motion } from "framer-motion";
 import shivamImg from "../assets/Shivam2.jpeg";
@@ -17,46 +14,45 @@ const workshops = [
   {
     title: "Content Creation Workshop",
     desc: "All you need to know about content creation",
-    duration: "Day Timer",
+    duration: "5 April 2026",
     seats: "Limited Seats",
     cta: "Book Your Spot",
-    link: "https://exly.live/t4KtTT", 
+    link: "https://exly.live/t4KtTT",
     color: "blue",
     number: "01",
     image: shivamImg,
-    name: "Shivam",
+    name: "Shivam Garg",
     icon: Video,
   },
   {
     title: "Be Independent",
     desc: "Make your own money",
-    duration: "Day Timer",
+    duration: "1 April 2026",
     seats: "Limited Seats",
     cta: "Book Your Spot",
     link: "https://exly.live/r0bnyu",
     color: "gold",
     number: "02",
     image: shivamImg,
-    name: "Shivam",
+    name: "Shivam Garg",
     icon: Sparkles,
   },
   {
     title: "1:1 Call",
     desc: "For Personalised Content Creation Guide\nEarly Connect",
-    duration: "Day Timer",
+    duration: null,
     seats: null,
     cta: "Book Now",
-    link: "https://shivam-garg.neetocal.com/meeting-with-shivam-garg", 
+    link: "https://shivam-garg.neetocal.com/meeting-with-shivam-garg",
     color: "blue",
     number: "03",
     image: shivamImg,
-    name: "Shivam",
-    icon: Phone,
+    name: "Shivam Garg",
   },
   {
     title: "1:1 Edit Call",
     desc: "If you truly want to learn motion graphics, also the tips and tricks to do them fast — he's the one to learn from.",
-    duration: "Day Timer",
+    duration: null,
     seats: null,
     cta: "Book Now",
     link: "https://shivam-kumar2.neetocal.com/meeting-with-shivam-kumar-2",
@@ -64,7 +60,6 @@ const workshops = [
     number: "04",
     image: shivamKumarImg,
     name: "Shivam Kumar",
-    icon: Palette,
   },
 ];
 
@@ -89,11 +84,12 @@ export default function WorkshopsSection() {
     >
       {/* Background glows */}
       <div
-        className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-[0.06] pointer-events-none"
+        className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-[0.06]"
         style={{ background: blueAccent }}
       />
+
       <div
-        className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
+        className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04]"
         style={{ background: goldAccent }}
       />
 
@@ -195,14 +191,14 @@ export default function WorkshopsSection() {
                 {/* Top Row */}
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{
-                        background: `${accent}20`,
-                      }}
-                    >
-                      <workshop.icon size={18} style={{ color: accent }} />
-                    </div>
+                    {workshop.icon && (
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{ background: `${accent}20` }}
+                      >
+                        <workshop.icon size={18} style={{ color: accent }} />
+                      </div>
+                    )}
 
                     <span
                       className="text-xs font-semibold uppercase tracking-wider"
@@ -243,52 +239,57 @@ export default function WorkshopsSection() {
                   {workshop.desc}
                 </p>
 
-                <div className="flex flex-wrap gap-3 mb-6">
-                  <div
-                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
+                {/* INFO ROW */}
+                {(workshop.duration || workshop.seats) && (
+                  <div className="flex flex-wrap gap-3 mb-6">
+                    {workshop.duration && (
+                      <div
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
+                        style={{
+                          border: `1px solid ${accent}40`,
+                          color: accent,
+                          background: `${accent}08`,
+                        }}
+                      >
+                        <Clock size={13} />
+                        {workshop.duration}
+                      </div>
+                    )}
+
+                    {workshop.seats && (
+                      <div
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
+                        style={{
+                          border: `1px solid ${accent}40`,
+                          color: accent,
+                          background: `${accent}08`,
+                        }}
+                      >
+                        <Users size={13} />
+                        {workshop.seats}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <a
+                  href={workshop.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <motion.button
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-fit cursor-pointer px-6 py-3 rounded-xl font-semibold flex items-center gap-2 text-sm"
                     style={{
-                      border: `1px solid ${accent}40`,
-                      color: accent,
-                      background: `${accent}08`,
+                      background: accent,
+                      color: "hsl(220,20%,4%)",
                     }}
                   >
-                    <Clock size={13} />
-                    {workshop.duration}
-                  </div>
-
-                  {workshop.seats && (
-                    <div
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
-                      style={{
-                        border: `1px solid ${accent}40`,
-                        color: accent,
-                        background: `${accent}08`,
-                      }}
-                    >
-                      <Users size={13} />
-                      {workshop.seats}
-                    </div>
-                  )}
-                </div>
-
-               <a
-  href={workshop.link}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <motion.button
-    whileHover={{ scale: 1.04 }}
-    whileTap={{ scale: 0.97 }}
-    className="w-fit cursor-pointer px-6 py-3 rounded-xl font-semibold flex items-center gap-2 text-sm"
-    style={{
-      background: accent,
-      color: "hsl(220,20%,4%)",
-    }}
-  >
-    {workshop.cta}
-    <ArrowRight size={15} />
-  </motion.button>
-</a>
+                    {workshop.cta}
+                    <ArrowRight size={15} />
+                  </motion.button>
+                </a>
               </div>
             </motion.div>
           );
@@ -297,4 +298,3 @@ export default function WorkshopsSection() {
     </section>
   );
 }
-

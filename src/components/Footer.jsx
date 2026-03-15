@@ -6,7 +6,7 @@ const navLinks = [
   { label: "Home", href: "#home", type: "scroll" },
   { label: "About", href: "#about", type: "scroll" },
   { label: "Workshops", href: "#workshops", type: "scroll" },
-  { label: "Kid Fluencer Deck", href: "/kidfluencer-deck", type: "route" },
+  { label: "Meet Our Talent", href: "/kidfluencer-deck", type: "route" },
 ];
 
 export default function Footer() {
@@ -100,7 +100,7 @@ export default function Footer() {
                   Email
                 </div>
                 <a
-                  href="legaropvtltd@gmail.com"
+                  href="mailto:legaropvtltd@gmail.com"
                   className="text-sm text-[hsl(220,10%,55%)] hover:text-[hsl(210,100%,56%)] transition-colors"
                 >
                   legaropvtltd@gmail.com
