@@ -268,7 +268,7 @@ const kids = [
   {
     id: 14,
     name: "Rajatparmitaofficial",
-    age: 36,
+    age: 2.5,
     image: kid14,
     niche: "Kidfluencers",
     location: "Delhi",
