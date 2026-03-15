@@ -391,7 +391,7 @@ const kids = [
     image: kid21,
     niche: "Finance",
     location: "Kullu,HP",
-    followers: "70.9K",
+    followers: "481K",
     engagement: "10.5%",
     platforms:["instagram", "youtube"],
     skills: ["OOTD"],
@@ -409,7 +409,7 @@ const kids = [
     image: kid22,
     niche: "Storyteller",
     location: "Delhi/Dehradun",
-    followers: "70.9K",
+    followers: "589K",
     engagement: "10.5%",
     platforms:["instagram", "youtube"],
     skills: ["OOTD"],
@@ -434,8 +434,8 @@ function PlatformIcon({ platform, link }) {
 
   const icon =
     platform === "instagram"
-      ? <Instagram size={18} className="text-pink-400 -mx-5 hover:scale-110 transition cursor-pointer" />
-      : <Youtube size={18} className="text-red-400  -mr-5 hover:scale-110 transition cursor-pointer" />;
+      ? <Instagram size={18} className="text-pink-400 hover:scale-110 transition cursor-pointer" />
+      : <Youtube size={18} className="text-red-400 hover:scale-110 transition cursor-pointer" />;
 
   return (
     <a
