@@ -65,7 +65,7 @@ const kids = [
   {
     id: 2,
     name: "theyogish",
-    age: 36,
+    age: 7,
     image: kid2,
     niche: "Kidfluencers",
     location: "Delhi",
@@ -81,7 +81,7 @@ const kids = [
   },
   {
     id: 3,
-    name: "Asher",
+    name: "i.m.asher",
     age: 3,
     image: kid3,
     niche: "Kidfluencers",
@@ -98,7 +98,7 @@ const kids = [
   },
   {
     id: 4,
-    name: "Ezra",
+    name: "bgandtheboys",
     age: 13,
     image: kid4,
     niche: "Kidfluencers",
@@ -114,10 +114,10 @@ const kids = [
   },
   {
     id: 5,
-    name: "Sia",
+    name: "sia_3vedi",
     age: 7,
     image: kid5,
-    niche: "Storyteller",
+    niche: "Kidfluencers",
     location: "Bengaluru",
     followers: "1.8M",
     engagement: "6.8%",
@@ -131,7 +131,7 @@ const kids = [
   },
   {
     id: 6,
-    name: "Sonal Kaushal",
+    name: "the_motormouth",
     age: 3,
     image: kid6,
     niche: "Kidfluencers",
@@ -148,7 +148,7 @@ const kids = [
   },
   {
     id: 7,
-    name: "Arshia Goswami",
+    name: "fit_arshia",
     age: 10,
     image: kid7,
     niche: "Kidfluencers",
@@ -165,7 +165,7 @@ const kids = [
   },
   {
     id: 8,
-    name: "Shravani",
+    name: "shravanix29",
     age: 7,
     image: kid8,
     niche: "Kidfluencers",
@@ -182,7 +182,7 @@ const kids = [
   },
   {
     id: 9,
-    name: "Rudransh & Devanshi",
+    name: "avi.rashi",
     age: 8,
     image: kid9,
     niche: "Kidfluencers",
@@ -199,7 +199,7 @@ const kids = [
   },
   {
     id: 10,
-    name: "Abhiraj",
+    name: "ishakapoor244",
     age: 8,
     image: kid10,
     niche: "Kidfluencers",
@@ -216,7 +216,7 @@ const kids = [
   },
   {
     id: 11,
-    name: "Sanaya Ranjan",
+    name: "little.era12_official",
     age: 5,
     image: kid11,
     niche: "Kidfluencers",
@@ -234,7 +234,7 @@ const kids = [
   {
     id: 12,
     name: "Chiki Mithi & Family",
-    age: 12,
+    age: 12&6,
     image: kid12,
     niche: "Kidfluencers",
     location: "Patna",
@@ -285,7 +285,7 @@ const kids = [
   {
     id: 15,
     name: "Nivu and Vayu",
-    age: 7,
+    age: 3.5 & 2,
     image: kid15,
     niche: "Kidfluencers",
     location: "Surat",
@@ -302,7 +302,7 @@ const kids = [
   {
     id: 16,
     name: "Laddu Panwar",
-    age: 7,
+    age: 4.5,
     image: kid16,
     niche: "Kidfluencers",
     location: "Dehdradun",
@@ -319,7 +319,7 @@ const kids = [
   {
     id: 17,
     name: "Nira Choudhary",
-    age: 2,
+    age: 2.5,
     image: kid17,
     niche: "Kidfluencers",
     location: "Chennai",
@@ -370,7 +370,7 @@ const kids = [
   {
     id: 20,
     name: "Tanya Agarwal",
-    age: 30,
+    age: 3,
     image: kid20,
     niche: "Kidfluencers",
     location: "Mumbai",
