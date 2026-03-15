@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import brandsBg from "../assets/brands-bg1.jpg";
 
@@ -30,8 +30,20 @@ const brandsRow2 = [
   { name: "Troovy", color: "#4285F4", logo: troovyLogo },
 ];
 
-export default function BrandsSection() { 
+export default function BrandsSection() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800">
@@ -64,22 +76,16 @@ export default function BrandsSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* Badge */}
-        <motion.div
-          className="flex justify-center mb-12 pt-28"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-         
-        </motion.div>
-
         {/* Row 1 */}
-        <div className="overflow-hidden">
+        <div className="overflow-hidden pt-28">
           <motion.div
-            className="flex gap-6"
+            className="flex gap-6 will-change-transform"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+            transition={{
+              repeat: Infinity,
+              duration: isMobile ? 6 : 25,
+              ease: "linear",
+            }}
           >
             {[...brandsRow1, ...brandsRow1].map((brand, i) => (
               <BrandCard key={`r1-${i}`} brand={brand} />
@@ -90,9 +96,13 @@ export default function BrandsSection() {
         {/* Row 2 */}
         <div className="overflow-hidden mt-6">
           <motion.div
-            className="flex gap-6"
+            className="flex gap-6 will-change-transform"
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+            transition={{
+              repeat: Infinity,
+              duration: isMobile ? 7 : 30,
+              ease: "linear",
+            }}
           >
             {[...brandsRow2, ...brandsRow2].map((brand, i) => (
               <BrandCard key={`r2-${i}`} brand={brand} />
@@ -115,6 +125,7 @@ export default function BrandsSection() {
             <ArrowRight size={18} />
           </button>
         </motion.div>
+
       </div>
     </section>
   );
@@ -141,11 +152,11 @@ function BrandCard({ brand }) {
         alt={brand.name}
         className="min-h-[100px] min-w-[100px] object-contain"
         style={{
-         filter: hovered
-  ? brand.name === "Axis Max Life"
-    ? "brightness(0) saturate(100%) invert(19%) sepia(96%) saturate(7472%) hue-rotate(356deg) brightness(95%) contrast(118%)"
-    : "brightness(1) saturate(1)"
-  : "brightness(0) invert(1) opacity(0.7)",
+          filter: hovered
+            ? brand.name === "Axis Max Life"
+              ? "brightness(0) saturate(100%) invert(19%) sepia(96%) saturate(7472%) hue-rotate(356deg) brightness(95%) contrast(118%)"
+              : "brightness(1) saturate(1)"
+            : "brightness(0) invert(1) opacity(0.7)",
         }}
       />
     </motion.div>
