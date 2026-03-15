@@ -46,7 +46,7 @@ export default function BrandsSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800">
+    <section id='brands' className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800">
 
       {/* Background texture */}
       <div
