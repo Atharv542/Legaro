@@ -7,7 +7,7 @@ import {
   Video
 } from "lucide-react";
 import { motion } from "framer-motion";
-import shivamImg from "../assets/Shivam2.jpeg";
+import shivamImg from "../assets/Shivam3.jpeg";
 import shivamKumarImg from "../assets/Shivam_Kumar.webp";
 
 const workshops = [

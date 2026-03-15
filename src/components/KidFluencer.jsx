@@ -99,7 +99,7 @@ const kids = [
   {
     id: 4,
     name: "bgandtheboys",
-    age: 13,
+    age: 10,
     image: kid4,
     niche: "Kidfluencers",
     location: "Mumbai & Kerala",
@@ -234,7 +234,7 @@ const kids = [
   {
     id: 12,
     name: "Chiki Mithi & Family",
-    age: 12&6,
+    age: "12 & 6",
     image: kid12,
     niche: "Kidfluencers",
     location: "Patna",
@@ -285,7 +285,7 @@ const kids = [
   {
     id: 15,
     name: "Nivu and Vayu",
-    age: 3.5 & 2,
+    age: "3.5 & 2",
     image: kid15,
     niche: "Kidfluencers",
     location: "Surat",
@@ -852,7 +852,7 @@ export default function KidfluencerDeck() {
     <div className="min-h-screen bg-neutral-950 text-neutral-100">
 
       {/* NAV */}
-      <div className="sticky top-0 flex justify-between px-6 py-4 border-b border-neutral-800">
+      <div className="  top-0 flex justify-between px-6 py-4 border-b border-neutral-800">
 
         <button
           onClick={() => navigate(-1)}

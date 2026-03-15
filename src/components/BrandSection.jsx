@@ -46,44 +46,52 @@ export default function BrandsSection() {
   }, []);
 
   return (
-    <section id='brands' className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800">
+    <section
+      id="brands"
+      className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800"
+    >
+      {/* Background texture (disabled on mobile) */}
+      {!isMobile && (
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url(${brandsBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      )}
 
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url(${brandsBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      {/* Blue glow (disabled on mobile) */}
+      {!isMobile && (
+        <motion.div
+          className="absolute top-[-120px] left-[-120px] w-[600px] h-[600px] rounded-full blur-[160px]"
+          style={{ background: "#2563eb", opacity: 0.1 }}
+          animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.15, 0.1] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+      )}
 
-      {/* Blue glow */}
-      <motion.div
-        className="absolute top-[-120px] left-[-120px] w-[600px] h-[600px] rounded-full blur-[160px]"
-        style={{ background: "#2563eb", opacity: 0.1 }}
-        animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.15, 0.1] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-
-      {/* Orange glow */}
-      <motion.div
-        className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full blur-[180px]"
-        style={{ background: "#f59e0b", opacity: 0.1 }}
-        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
+      {/* Orange glow (disabled on mobile) */}
+      {!isMobile && (
+        <motion.div
+          className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full blur-[180px]"
+          style={{ background: "#f59e0b", opacity: 0.1 }}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity }}
+        />
+      )}
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Row 1 */}
-        <div className="overflow-hidden pt-28">
+        <div className="overflow-hidden pt-24">
           <motion.div
-            className="flex gap-6 will-change-transform"
+            className="flex gap-4 md:gap-6 will-change-transform transform-gpu"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 6 : 25,
+              duration: isMobile ? 14 : 25,
               ease: "linear",
             }}
           >
@@ -96,11 +104,11 @@ export default function BrandsSection() {
         {/* Row 2 */}
         <div className="overflow-hidden mt-6">
           <motion.div
-            className="flex gap-6 will-change-transform"
+            className="flex gap-4 md:gap-6 will-change-transform transform-gpu"
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 7 : 30,
+              duration: isMobile ? 16 : 30,
               ease: "linear",
             }}
           >
@@ -112,7 +120,7 @@ export default function BrandsSection() {
 
         {/* CTA */}
         <motion.div
-          className="flex justify-center mt-16 pb-28"
+          className="flex justify-center mt-16 pb-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -136,7 +144,7 @@ function BrandCard({ brand }) {
 
   return (
     <motion.div
-      className="min-w-[260px] h-[120px] flex items-center justify-center px-8 rounded-xl cursor-pointer bg-[#121622]/70 border border-white/10 backdrop-blur-lg transition"
+      className="min-w-[180px] md:min-w-[260px] h-[110px] md:h-[120px] flex items-center justify-center px-6 md:px-8 rounded-xl cursor-pointer bg-[#121622]/70 border border-white/10 backdrop-blur-lg transition"
       style={{
         borderColor: hovered ? `${brand.color}55` : undefined,
         boxShadow: hovered
@@ -150,7 +158,8 @@ function BrandCard({ brand }) {
       <img
         src={brand.logo}
         alt={brand.name}
-        className="min-h-[100px] min-w-[100px] object-contain"
+        className="h-[120px] w-[120px] md:min-h-[100px] md:min-w-[100px] object-contain"
+        loading="lazy"
         style={{
           filter: hovered
             ? brand.name === "Axis Max Life"
