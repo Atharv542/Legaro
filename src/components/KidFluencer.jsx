@@ -251,7 +251,7 @@ const kids = [
   {
     id: 13,
     name: "Samagra Sankalp Patel",
-    age: 7,
+    age: 2.5,
     image: kid13,
     niche: "Kidfluencers",
     location: "Etawah",
