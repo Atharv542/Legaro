@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   X,
   CheckCircle2,
@@ -539,16 +540,32 @@ function InquiryModal({ selectedKids, onClose }) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    console.log(form);
-
-    setSubmitted(true);
-
-    setTimeout(() => {
-      onClose();
-    }, 2000);
+  const templateParams = {
+    creators: form.creators,
+    brand_name: form.brandName,
+    brand_email: form.brandEmail,
+    brand_phone: form.brandPhone,
   };
+
+  emailjs
+    .send(
+      "YOUR_SERVICE_ID",     // from EmailJS
+      "YOUR_TEMPLATE_ID",    // from EmailJS
+      templateParams,
+      "YOUR_PUBLIC_KEY"      // from EmailJS
+    )
+    .then(
+      () => {
+        setSubmitted(true);
+      },
+      (error) => {
+        console.log("FAILED...", error);
+        alert("Something went wrong!");
+      }
+    );
+};
 
   return (
     <motion.div
