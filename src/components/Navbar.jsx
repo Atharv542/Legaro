@@ -96,10 +96,10 @@ export default function Navbar() {
           ))}
 
           <button
-            onClick={() => handleNav("#call")}
+            onClick={() =>navigate('/kidfluencer-deck')}
             className="mt-2  px-5 py-3 rounded-xl font-semibold bg-[hsl(210,100%,56%)] text-black hover:brightness-110 transition"
           >
-            Book a Call
+            Build Your Campaign
           </button>
         </div>
       )}
