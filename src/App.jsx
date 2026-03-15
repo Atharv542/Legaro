@@ -6,7 +6,6 @@ import AboutSection from "./components/AboutUs";
 import WorkshopsSection from "./components/Workshops";
 import Footer from "./components/Footer";
 import BrandsSection from "./components/BrandSection";
-import TeamMemberSection from "./components/ShivamKumar";
 import KidfluencerDeck from "./components/KidFluencer";
 
 function HomePage() {
@@ -17,7 +16,7 @@ function HomePage() {
       <AboutSection />
       <BrandsSection />
       <WorkshopsSection />
-      <TeamMemberSection />
+      
       <Footer />
     </>
   );

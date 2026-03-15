@@ -1,50 +1,76 @@
-import { Target, Zap, Users } from "lucide-react";
+
+import { Target, Zap, Users, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.2 } },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, x: 60, scale: 0.9 },
+  show: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const services = [
+  {
+    icon: Target,
+    title: "Social Media Management",
+    tag: "Strategy · Content · Growth",
+    accent: "hsl(210,100%,56%)",
+    accentBg: "hsl(210,100%,56%,0.1)",
+    number: "01",
+  },
+  {
+    icon: Zap,
+    title: "Influencer Marketing & Talent Management",
+    tag: "Campaigns · Creators · Results",
+    accent: "hsl(38,95%,55%)",
+    accentBg: "hsl(38,95%,55%,0.1)",
+    number: "02",
+  },
+  {
+    icon: Users,
+    title: "IP Building",
+    tag: "Branding · Monetisation · Legacy",
+    accent: "hsl(210,100%,56%)",
+    accentBg: "hsl(210,100%,56%,0.1)",
+    number: "03",
+  },
+];
+
 export default function AboutSection() {
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  };
-
-  const cardVariant = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   return (
     <section
       id="about"
-      className="py-24 relative overflow-hidden bg-[hsl(220,20%,6%)] text-[hsl(210,20%,95%)] border-t border-[hsl(220,16%,16%)]"
+      className="py-24 relative overflow-hidden"
+      style={{ background: "hsl(220,20%,6%)", color: "hsl(210,20%,95%)" }}
     >
-      {/* Background Blue Glow */}
+      {/* Background Glows */}
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10"
+        className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-10 pointer-events-none"
+        style={{ background: "hsl(210,100%,56%)" }}
+      />
+
+      <div
+        className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full blur-3xl opacity-5 pointer-events-none"
         style={{ background: "hsl(210,100%,56%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Content */}
+          {/* Left — Our Story + Video */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -53,132 +79,108 @@ export default function AboutSection() {
           >
             <motion.span
               variants={fadeUp}
-              className="inline-flex px-4 py-1 text-xs tracking-widest uppercase rounded-full border border-[hsl(210,100%,56%)] text-[hsl(210,100%,56%)] mb-4"
+              className="inline-flex px-4 py-1.5 text-xs tracking-[0.2em] uppercase rounded-full mb-4"
+              style={{
+                border: "1px solid hsl(210,100%,56%)",
+                color: "hsl(210,100%,56%)",
+              }}
             >
               Our Story
             </motion.span>
 
-            <motion.h2
-              variants={fadeUp}
-              className="font-black text-4xl md:text-5xl leading-tight mb-6"
-            >
-              We Are{" "}
-              <span className="text-[hsl(210,100%,56%)]">
-                Legaro
-              </span>
-            </motion.h2>
+           
 
-            <motion.p
-              variants={fadeUp}
-              className="text-[hsl(220,10%,55%)] leading-relaxed mb-6"
-            >
-              Legaro Pvt Ltd is a dynamic company built on the belief that every
-              young person has the potential to build something extraordinary.
-              We bridge the gap between ambition and action through high-energy
-              workshops, mentorship programmes, and one-on-one coaching sessions.
-            </motion.p>
-
-            <motion.p
-              variants={fadeUp}
-              className="text-[hsl(220,10%,55%)] leading-relaxed mb-8"
-            >
-              Born from the passion of two driven individuals — Anant and Shivam —
-              Legaro was created to be more than a company. It's a movement. A
-              community where curiosity meets execution, and dreams get their runway.
-            </motion.p>
-
+            {/* Video */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-wrap gap-4"
-            >
-              <button
-                onClick={() =>
-                  document
-                    .querySelector("#workshops")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="px-6 py-3 cursor-pointer rounded-xl font-semibold bg-[hsl(210,100%,56%)] text-black hover:brightness-110 transition"
-              >
-                View Workshops
-              </button>
+              className="relative rounded-2xl overflow-hidden aspect-5/3"
+              style={{
+                border: "1px solid hsl(210,100%,56%,0.25)",
+    boxShadow: "0 0 60px hsl(210,100%,56%,0.12)",background: "hsl(220,20%,6%)"
 
-              <button
-                onClick={() =>
-                  document
-                    .querySelector("#team")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className="px-6 py-3 cursor-pointer rounded-xl font-semibold border border-[hsl(220,16%,16%)] hover:bg-[hsl(220,18%,9%)] transition"
-              >
-                Meet the Team
-              </button>
+              }}
+            >
+              <video
+  src="https://res.cloudinary.com/djkmvvviu/video/upload/v1773494224/WEBSITE_REEL_1_1_kookdt.mp4"
+  controls
+  playsInline
+  className="w-full h-full object-contain"
+/>
             </motion.div>
           </motion.div>
 
-          {/* Right Cards */}
+          {/* Right — Service Cards */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-6"
+            className="flex flex-col gap-5 md:-mb-18 "
           >
-            {[
-              {
-                icon: Target,
-                title: "Mission-Driven",
-                desc: "We exist to unlock the potential in every young entrepreneur — with structure, energy, and relentless support.",
-                type: "blue",
-              },
-              {
-                icon: Zap,
-                title: "Action-Oriented",
-                desc: "No fluff. Every workshop, call and session is designed for real outcomes — ideas you can execute on Day 1.",
-                type: "gold",
-              },
-              {
-                icon: Users,
-                title: "Community First",
-                desc: "Legaro is a tribe. We grow together, celebrate wins together, and push each other to go further.",
-                type: "blue",
-              },
-            ].map((item) => (
+           
+
+            {services.map((item) => (
               <motion.div
                 key={item.title}
                 variants={cardVariant}
-                whileHover={{ y: -6 }}
-                className="bg-[hsl(220,18%,9%)] border border-[hsl(220,16%,16%)] rounded-2xl p-6 flex items-start gap-4 hover:border-[hsl(210,100%,56%)] transition-all duration-300"
+                whileHover={{ x: 8, transition: { duration: 0.25 } }}
+                className="relative  rounded-2xl p-6 flex items-center gap-5 cursor-pointer group overflow-hidden"
+                style={{
+                  background: "hsl(220,18%,9%)",
+                  border: "1px solid hsl(220,16%,16%)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = `${item.accent}50`;
+                  e.currentTarget.style.boxShadow = `0 0 40px ${item.accent}15, inset 0 0 40px ${item.accent}05`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "hsl(220,16%,16%)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
               >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{
-                    background:
-                      item.type === "blue"
-                        ? "hsl(210,100%,56%,0.15)"
-                        : "hsl(38,95%,55%,0.15)",
-                  }}
+                {/* Large background number */}
+                <span
+                  className="absolute right-6 top-1/2 -translate-y-1/2 text-7xl font-black opacity-[0.04] pointer-events-none select-none transition-opacity duration-300 group-hover:opacity-[0.08]"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  <item.icon
-                    size={18}
-                    style={{
-                      color:
-                        item.type === "blue"
-                          ? "hsl(210,100%,56%)"
-                          : "hsl(38,95%,55%)",
-                    }}
-                  />
+                  {item.number}
+                </span>
+
+                {/* Icon */}
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: item.accentBg }}
+                >
+                  <item.icon size={22} style={{ color: item.accent }} />
                 </div>
 
-                <div>
-                  <h3 className="font-bold text-base mb-1">
-                    {item.title}
+                {/* Text */}
+                <div className="flex-1 min-w-0">
+                  <h3
+                    className="font-bold text-lg mb-1 transition-colors duration-300"
+                    style={{
+                      color: "hsl(210,20%,95%)",
+                      fontFamily: "'Montserrat', sans-serif",
+                    }}
+                  >
+                    <span className="group-hover:text-[hsl(210,100%,56%)] transition-colors duration-300">
+                      {item.title}
+                    </span>
                   </h3>
-                  <p className="text-sm text-[hsl(220,10%,55%)] leading-relaxed">
-                    {item.desc}
-                  </p>
+
+                  <span
+                    className="text-xs tracking-wider uppercase"
+                    style={{ color: item.accent, opacity: 0.7 }}
+                  >
+                    {item.tag}
+                  </span>
                 </div>
+
+              
               </motion.div>
             ))}
+
+            
           </motion.div>
 
         </div>
@@ -186,3 +188,4 @@ export default function AboutSection() {
     </section>
   );
 }
+

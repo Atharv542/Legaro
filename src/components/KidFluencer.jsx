@@ -18,102 +18,434 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import kid1 from "../assets/anant.jpg";
-import kid2 from "../assets/anant.jpg";
-import kid3 from "../assets/anant.jpg";
-import kid4 from "../assets/anant.jpg";
-import kid5 from "../assets/anant.jpg";
-import kid6 from "../assets/anant.jpg";
+import kid1 from "../assets/Adwik.jpeg";
+import kid2 from "../assets/Yogesh.jpeg";
+import kid3 from "../assets/Asher.jpeg";
+import kid4 from "../assets/Biji Basheer.jpeg";
+import kid5 from "../assets/Sia.jpeg";
+import kid6 from "../assets/Sonali.jpeg";
+import kid7 from "../assets/Ashri.jpeg";
+import kid8 from "../assets/Shravani.jpeg";
+import kid9 from "../assets/Avi.jpeg";
+import kid10 from "../assets/Isha.jpeg";
+import kid11 from "../assets/Sanaya.jpeg";
+import kid12 from "../assets/Chiki.jpeg";
+import kid13 from "../assets/Samagra.jpeg";
+import kid14 from "../assets/Rajat.jpeg";
+import kid15 from "../assets/Nivu.jpeg";
+import kid16 from "../assets/Laddu.jpeg";
+import kid17 from "../assets/Nira.jpeg";
+import kid18 from "../assets/Arun.jpeg";
+import kid19 from "../assets/Ankit.jpeg";
+import kid20 from "../assets/Tanya.jpeg";
+import kid21 from "../assets/Anuj.jpeg";
+import kid22 from "../assets/Tamanna.jpeg";
 
 /* DATA */
 
 const kids = [
   {
     id: 1,
-    name: "Aryan Mehta",
-    age: 14,
-    image: kid1,
-    niche: "Lifestyle",
-    followers: "120K",
+    name: "Adwik Paul",
+    age: 7,
+    image:kid1,
+    niche: "Kidfluencers",
+    location: "Kullu, HP",
+    followers: "902K",
     engagement: "8.4%",
     platforms: ["instagram", "youtube"],
     skills: ["Storytelling", "Unboxing"],
     badge: "🔥 Trending",
+     links:{
+      instagram:"https://www.instagram.com/adwikpaul?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@houseofpauls"
+    },
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    age: 15,
+    name: "theyogish",
+    age: 36,
     image: kid2,
-    niche: "Tech",
-    followers: "85K",
+    niche: "Kidfluencers",
+    location: "Delhi",
+    followers: "151K",
     engagement: "9.1%",
     platforms: ["instagram", "youtube"],
     skills: ["Product Reviews"],
     badge: "⚡ Rising Star",
+     links:{
+      instagram:"https://www.instagram.com/theyogish?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@theyogish"
+    },
   },
   {
     id: 3,
-    name: "Kabir Singh",
-    age: 16,
+    name: "Asher",
+    age: 3,
     image: kid3,
-    niche: "Sports",
-    followers: "200K",
+    niche: "Kidfluencers",
+    location: "Delhi",
+    followers: "630K",
     engagement: "7.2%",
     platforms: ["instagram", "youtube"],
     skills: ["Football"],
     badge: "🏆 Top Creator",
+     links:{
+      instagram:"https://www.instagram.com/i.m.asher?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@likeasher"
+    },
   },
   {
     id: 4,
-    name: "Nisha Patel",
+    name: "Ezra",
     age: 13,
     image: kid4,
-    niche: "Art",
-    followers: "60K",
+    niche: "Kidfluencers",
+    location: "Mumbai & Kerala",
+    followers: "168K",
     engagement: "11.3%",
     platforms: ["instagram"],
     skills: ["Painting"],
     badge: "🎨 Creative Genius",
+     links:{
+      instagram:"https://www.instagram.com/bgandtheboys?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    },
   },
   {
     id: 5,
-    name: "Dev Tiwari",
-    age: 15,
+    name: "Sia",
+    age: 7,
     image: kid5,
-    niche: "Gaming",
-    followers: "300K",
+    niche: "Storyteller",
+    location: "Bengaluru",
+    followers: "1.8M",
     engagement: "6.8%",
-    platforms: ["youtube", "instagram"],
+    platforms: ["instagram", "youtube"],
     skills: ["Live Streams"],
     badge: "🎮 Gaming Pro",
+     links:{
+      instagram:"https://www.instagram.com/sia_3vedi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@Sia.trivedi"
+    },
   },
   {
     id: 6,
-    name: "Zara Khan",
-    age: 14,
+    name: "Sonal Kaushal",
+    age: 3,
     image: kid6,
-    niche: "Fashion",
-    followers: "95K",
+    niche: "Kidfluencers",
+    location: "Mumbai",
+    followers: "2.4M",
     engagement: "10.5%",
     platforms: ["instagram"],
     skills: ["OOTD"],
     badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/the_motormouth?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      
+    },
+  },
+  {
+    id: 7,
+    name: "Arshia Goswami",
+    age: 10,
+    image: kid7,
+    niche: "Kidfluencers",
+    location: "Chandigarh",
+    followers: "1.8M",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/fit_arshia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@fit_arshia"
+    },
+  },
+  {
+    id: 8,
+    name: "Shravani",
+    age: 7,
+    image: kid8,
+    niche: "Kidfluencers",
+    location: "Faridabad",
+    followers: "736K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/shravanix29?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@yourshravani"
+    },
+  },
+  {
+    id: 9,
+    name: "Rudransh & Devanshi",
+    age: 8,
+    image: kid9,
+    niche: "Kidfluencers",
+    location: "Delhi",
+    followers: "576K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/avi.rashi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/c/NegiFamily"
+    },
+  },
+  {
+    id: 10,
+    name: "Abhiraj",
+    age: 8,
+    image: kid10,
+    niche: "Kidfluencers",
+    location: "Gurgaon",
+    followers: "456K",
+    engagement: "10.5%",
+    platforms: ["instagram"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/ishakapoor244?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  
+    },
+  },
+  {
+    id: 11,
+    name: "Sanaya Ranjan",
+    age: 5,
+    image: kid11,
+    niche: "Kidfluencers",
+    location: "Patna",
+    followers: "567K",
+    engagement: "10.5%",
+    platforms: ["instagram"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/little.era12_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      
+    },
+  },
+  {
+    id: 12,
+    name: "Chiki Mithi & Family",
+    age: 12,
+    image: kid12,
+    niche: "Kidfluencers",
+    location: "Patna",
+    followers: "414K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/chikimithi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@chikimithifamily"
+    },
+  },
+  {
+    id: 13,
+    name: "Samagra Sankalp Patel",
+    age: 7,
+    image: kid13,
+    niche: "Kidfluencers",
+    location: "Etawah",
+    followers: "623K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/littlesamagra0110?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@Samagraverse"
+    },
+  },
+  {
+    id: 14,
+    name: "Rajatparmitaofficial",
+    age: 36,
+    image: kid14,
+    niche: "Kidfluencers",
+    location: "Delhi",
+    followers: "940K",
+    engagement: "10.5%",
+    platforms: ["instagram"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/justcouplethings_123?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+
+    },
+  },
+  {
+    id: 15,
+    name: "Nivu and Vayu",
+    age: 7,
+    image: kid15,
+    niche: "Kidfluencers",
+    location: "Surat",
+    followers: "177K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/nivuandvayu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@nivuandvayu"
+    },
+  },
+  {
+    id: 16,
+    name: "Laddu Panwar",
+    age: 7,
+    image: kid16,
+    niche: "Kidfluencers",
+    location: "Dehdradun",
+    followers: "478K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/laddu_panwar14?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@neelamvlogs1906?app=desktop&fbclid=PAY2xjawJLsvJleHRuA2FlbQIxMAABpv6JyE5aMo86S1KkWVn2iPAuMlrUH_qWrEbgZlBxAN1p-bHEEoypJ3amXQ_aem_YVmopQia0uD-DvUmzTEVXw"
+    },
+  },
+  {
+    id: 17,
+    name: "Nira Choudhary",
+    age: 2,
+    image: kid17,
+    niche: "Kidfluencers",
+    location: "Chennai",
+    followers: "342K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/priyanka_niraa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@priyanka_Nira"
+    },
+  },
+  {
+    id: 18,
+    name: "Arun Tomar",
+    age: 7,
+    image: kid18,
+    niche: "Kidfluencers",
+    location: "Jaipur",
+    followers: "50.9K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/thedanikachaudhary?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@thedanikachaudhary"
+    },
+  },
+  {
+    id: 19,
+    name: "Ankit Ambedkar Banda",
+    age: 25,
+    image: kid19,
+    niche: "Kidfluencers",
+    location: "U.P.",
+    followers: "121K",
+    engagement: "10.5%",
+    platforms: ["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/ankitambedkarbanda?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@AnkitAmbedkarBanda"
+    },
+  },
+  {
+    id: 20,
+    name: "Tanya Agarwal",
+    age: 30,
+    image: kid20,
+    niche: "Kidfluencers",
+    location: "Mumbai",
+    followers: "70.9K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/tanyas_vanity?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@TanyasVanity"
+    },
+  },
+    {
+    id: 21,
+    name: "Anuj Paul",
+    age: 38,
+    image: kid21,
+    niche: "Finance",
+    location: "Kullu,HP",
+    followers: "70.9K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/anujpaul4?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      
+    },
+  },
+
+   {
+    id: 22,
+    name: "Tamanna Sharma",
+    age: 19,
+    image: kid22,
+    niche: "Storyteller",
+    location: "Delhi/Dehradun",
+    followers: "70.9K",
+    engagement: "10.5%",
+    platforms:["instagram", "youtube"],
+    skills: ["OOTD"],
+    badge: "👗 Style Icon",
+     links:{
+      instagram:"https://www.instagram.com/tee_.writes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      youtube:"https://www.youtube.com/@tamannasharma5004"
+    },
+
+    
+    
   },
 ];
 
-const NICHES = ["All", "Lifestyle", "Tech", "Sports", "Art", "Gaming", "Fashion"];
+const NICHES = ["All", "Kidfluencers", "Finance", "Storyteller"];
 
 /* PLATFORM ICON */
 
-function PlatformIcon({ platform }) {
-  if (platform === "instagram")
-    return <Instagram size={13} className="text-pink-400" />;
+function PlatformIcon({ platform, link }) {
 
-  if (platform === "youtube")
-    return <Youtube size={13} className="text-red-400" />;
+  if (!link) return null;
 
-  return null;
+  const icon =
+    platform === "instagram"
+      ? <Instagram size={18} className="text-pink-400 -mx-5 hover:scale-110 transition cursor-pointer" />
+      : <Youtube size={18} className="text-red-400  -mr-5 hover:scale-110 transition cursor-pointer" />;
+
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {icon}
+    </a>
+  );
 }
 
 /* CREATOR CARD */
@@ -122,7 +454,6 @@ function KidCard({ kid, selected, onSelect }) {
   return (
     <motion.div
       whileHover={{ y: -6 }}
-      onClick={() => onSelect(kid)}
       className={`relative rounded-2xl overflow-hidden cursor-pointer bg-neutral-900
       ${
         selected
@@ -137,47 +468,50 @@ function KidCard({ kid, selected, onSelect }) {
         />
       )}
 
-      <div className="absolute top-3 left-3 text-xs px-2 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-400">
-        {kid.badge}
+      
+
+      {/* PROFILE IMAGE */}
+      <div className="flex justify-center pt-6">
+        <img
+          src={kid.image}
+          alt={kid.name}
+          className="w-32 h-32 rounded-full object-cover border-4 border-neutral-800 shadow-md p-1 bg-neutral-900"
+        />
       </div>
 
-      <img
-        src={kid.image}
-        alt={kid.name}
-        className="w-full h-56 object-cover"
-      />
+      <div className="p-4 text-center">
 
-      <div className="p-4">
+        <h3 className="font-bold text-lg mt-2">{kid.name}</h3>
 
-        <div className="flex justify-between">
-          <div>
-            <h3 className="font-bold">{kid.name}</h3>
-            <p className="text-xs text-neutral-400">
-              Age {kid.age} · {kid.niche}
-            </p>
-          </div>
+        <p className="text-xs text-neutral-400">
+          Age {kid.age} · {kid.location}
+        </p>
 
-          <div className="flex gap-1">
-            {kid.platforms.map((p) => (
-              <PlatformIcon key={p} platform={p} />
-            ))}
-          </div>
+        {/* SOCIAL ICONS */}
+        <div className="flex justify-center gap-3 mt-3">
+          {kid.platforms.map((p) => (
+            <PlatformIcon
+              key={p}
+              platform={p}
+              link={kid.links?.[p]}
+            />
+          ))}
         </div>
 
-        <div className="flex gap-4 mt-3 text-xs">
+        {/* STATS */}
+        <div className="flex justify-center gap-6 mt-4 text-xs">
           <div className="flex items-center gap-1">
             <Users size={12} className="text-amber-400" />
             {kid.followers}
           </div>
 
-          <div className="flex items-center gap-1">
-            <Heart size={12} className="text-pink-400" />
-            {kid.engagement}
-          </div>
+       
         </div>
 
+        {/* SELECT BUTTON */}
         <div
-          className={`mt-4 text-center text-sm py-2 rounded-xl
+          onClick={() => onSelect(kid)}
+          className={`mt-4 text-center text-sm py-2 rounded-xl cursor-pointer
           ${
             selected
               ? "bg-amber-400 text-black"
@@ -186,11 +520,11 @@ function KidCard({ kid, selected, onSelect }) {
         >
           {selected ? "✓ Selected" : "Select Creator"}
         </div>
+
       </div>
     </motion.div>
   );
 }
-
 
 
 function InquiryModal({ selectedKids, onClose }) {
@@ -250,7 +584,7 @@ function InquiryModal({ selectedKids, onClose }) {
             </div>
 
             <span className="text-xs text-amber-400 font-semibold tracking-wide uppercase">
-              Brand Collaboration
+              Let’s collab
             </span>
 
           </div>
@@ -520,15 +854,12 @@ export default function KidfluencerDeck() {
       {/* HERO */}
       <div className="text-center py-16 px-6">
 
-        <div className="inline-flex items-center gap-2 px-4 py-1 border border-amber-400/30 text-amber-400 bg-amber-400/10 rounded-full mb-6">
-          <Zap size={14} />
-          India's Top Young Creators
-        </div>
+       
 
         <h1 className="text-5xl font-bold">
           Meet the
           <span className="block bg-gradient-to-r from-amber-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Kidfluencers
+            Influencers
           </span>
         </h1>
 
@@ -540,7 +871,7 @@ export default function KidfluencerDeck() {
           <button
             key={n}
             onClick={() => setActiveNiche(n)}
-            className={`px-4 py-1 rounded-full text-sm
+            className={`px-4 py-1 cursor-pointer  rounded-full text-sm
             ${
               activeNiche === n
                 ? "bg-amber-400 text-black"

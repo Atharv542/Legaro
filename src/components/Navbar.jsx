@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-
+import { useNavigate } from "react-router-dom";
+import Logo from '../assets/Logo_Main4.png'
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -9,9 +10,12 @@ const navItems = [
 
 ];
 
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+   const navigate= useNavigate()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -40,19 +44,7 @@ export default function Navbar() {
           onClick={() => handleNav("#home")}
           className="flex items-center gap-3 group"
         >
-          <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center font-black text-sm text-black"
-            style={{
-              background: "hsl(210,100%,56%)",
-              boxShadow: "0 0 18px hsl(210,100%,56%,0.6)",
-            }}
-          >
-            L
-          </div>
-
-          <span className="font-bold text-xl text-[hsl(210,96%,64%)]">
-            Legaro
-          </span>
+          <img src={Logo} className="w-36 mt-1"/>
         </button>
 
         {/* Desktop Nav */}
@@ -74,10 +66,10 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
           <button
-            onClick={() => handleNav("#call")}
+            onClick={() =>navigate('/kidfluencer-deck')}
             className="px-5 cursor-pointer py-2 text-xs font-semibold rounded-full bg-[hsl(210,100%,56%)] text-black hover:brightness-110 transition"
           >
-            Book a Call
+             Build Your Campaign
           </button>
         </div>
 

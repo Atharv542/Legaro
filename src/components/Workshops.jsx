@@ -1,49 +1,70 @@
+
 import {
   Calendar,
   Clock,
   Users,
   ArrowRight,
-  Star,
   Sparkles,
+  Video,
+  Phone,
+  Palette
 } from "lucide-react";
 import { motion } from "framer-motion";
+import shivamImg from "../assets/Shivam2.jpeg";
+import shivamKumarImg from "../assets/Shivam_Kumar.webp";
 
 const workshops = [
   {
-    title: "Entrepreneurship Bootcamp",
-    desc: "A high-intensity, hands-on workshop where you go from zero to building your first business model in 2 days.",
-    duration: "2 Days",
-    capacity: "20–30 seats",
-    level: "Beginner",
+    title: "Content Creation Workshop",
+    desc: "All you need to know about content creation",
+    duration: "Day Timer",
+    seats: "Limited Seats",
+    cta: "Book Your Spot",
+    link: "https://exly.live/t4KtTT", 
     color: "blue",
     number: "01",
+    image: shivamImg,
+    name: "Shivam",
+    icon: Video,
   },
   {
-    title: "Personal Branding Masterclass",
-    desc: "Learn how to craft a magnetic personal brand on Instagram and LinkedIn that attracts opportunities.",
-    duration: "1 Day",
-    capacity: "15–25 seats",
-    level: "All Levels",
+    title: "Be Independent",
+    desc: "Make your own money",
+    duration: "Day Timer",
+    seats: "Limited Seats",
+    cta: "Book Your Spot",
+    link: "https://exly.live/r0bnyu",
     color: "gold",
     number: "02",
+    image: shivamImg,
+    name: "Shivam",
+    icon: Sparkles,
   },
   {
-    title: "Social Media Growth Hacking",
-    desc: "Unlock the algorithms. Understand reels, content strategy, and engagement tactics.",
-    duration: "1 Day",
-    capacity: "20 seats",
-    level: "Intermediate",
+    title: "1:1 Call",
+    desc: "For Personalised Content Creation Guide\nEarly Connect",
+    duration: "Day Timer",
+    seats: null,
+    cta: "Book Now",
+    link: "https://shivam-garg.neetocal.com/meeting-with-shivam-garg", 
     color: "blue",
     number: "03",
+    image: shivamImg,
+    name: "Shivam",
+    icon: Phone,
   },
   {
-    title: "Mindset & Leadership Workshop",
-    desc: "Develop an unshakeable mindset and sharpen leadership skills.",
-    duration: "Half Day",
-    capacity: "25–40 seats",
-    level: "All Levels",
+    title: "1:1 Edit Call",
+    desc: "If you truly want to learn motion graphics, also the tips and tricks to do them fast — he's the one to learn from.",
+    duration: "Day Timer",
+    seats: null,
+    cta: "Book Now",
+    link: "https://shivam-kumar2.neetocal.com/meeting-with-shivam-kumar-2",
     color: "gold",
     number: "04",
+    image: shivamKumarImg,
+    name: "Shivam Kumar",
+    icon: Palette,
   },
 ];
 
@@ -56,34 +77,80 @@ const cardVariants = {
   }),
 };
 
+const blueAccent = "hsl(210,100%,56%)";
+const goldAccent = "hsl(38,95%,55%)";
+
 export default function WorkshopsSection() {
   return (
-    <section id="workshops" className="py-24 bg-gray-950 text-white">
-      
+    <section
+      id="workshops"
+      className="py-24 relative overflow-hidden"
+      style={{ background: "hsl(220,20%,4%)", color: "hsl(210,20%,95%)" }}
+    >
+      {/* Background glows */}
+      <div
+        className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-[0.06] pointer-events-none"
+        style={{ background: blueAccent }}
+      />
+      <div
+        className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-[0.04] pointer-events-none"
+        style={{ background: goldAccent }}
+      />
+
       {/* HEADER */}
-      <div className="max-w-6xl mx-auto px-6 text-center mb-16">
-
-        <span className="inline-flex items-center gap-2 px-4 py-1 text-xs uppercase tracking-widest rounded-full border border-blue-500 text-blue-400 mb-6">
+      <div className="max-w-6xl mx-auto px-6 text-center mb-16 relative z-10">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 text-xs uppercase tracking-[0.2em] rounded-full mb-6"
+          style={{
+            border: `1px solid ${blueAccent}`,
+            color: blueAccent,
+          }}
+        >
           <Calendar size={12} />
-          Workshops
-        </span>
+          Paid Offerings
+        </motion.span>
 
-        <h2 className="font-black text-4xl md:text-6xl">
-          Level Up with Our{" "}
-          <span className="text-blue-500">Workshops</span>
-        </h2>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-black text-4xl md:text-6xl leading-tight"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          Level Up{" "}
+          <span
+            style={{
+              background: `linear-gradient(135deg, ${blueAccent}, ${goldAccent})`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            With Us
+          </span>
+        </motion.h2>
 
-        <p className="text-gray-400 mt-5 max-w-xl mx-auto text-lg">
-          Hands-on immersive sessions designed to spark ideas and build real momentum.
-        </p>
-
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-5 italic max-w-xl mx-auto text-lg"
+          style={{ color: "hsl(220,10%,55%)" }}
+        >
+          Learn from the ones who actually know it.
+        </motion.p>
       </div>
 
       {/* GRID */}
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 relative z-10">
         {workshops.map((workshop, index) => {
           const isBlue = workshop.color === "blue";
+          const accent = isBlue ? blueAccent : goldAccent;
 
           return (
             <motion.div
@@ -96,133 +163,138 @@ export default function WorkshopsSection() {
               whileHover={{ y: -8 }}
               className="group relative rounded-3xl overflow-hidden"
             >
-
               {/* Glow Border */}
               <div
-                className={`absolute -inset-[1px] rounded-3xl opacity-40 group-hover:opacity-70 transition ${
-                  isBlue
-                    ? "bg-gradient-to-br from-blue-500 via-blue-500/20 to-transparent"
-                    : "bg-gradient-to-br from-yellow-500 via-yellow-500/20 to-transparent"
-                }`}
+                className="absolute -inset-[1px] rounded-3xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"
+                style={{
+                  background: isBlue
+                    ? `linear-gradient(135deg, ${blueAccent}, transparent 60%)`
+                    : `linear-gradient(135deg, ${goldAccent}, transparent 60%)`,
+                }}
               />
 
               {/* Card */}
-              <div className="relative rounded-3xl bg-gray-900 p-8 h-full flex flex-col">
-
-                {/* Background Number */}
+              <div
+                className="relative rounded-3xl p-7 h-full flex flex-col"
+                style={{
+                  background: "hsl(220,18%,8%)",
+                  border: "1px solid hsl(220,16%,14%)",
+                }}
+              >
+                {/* Number */}
                 <span
-                  className={`absolute top-4 right-6 text-[7rem] font-black opacity-5 ${
-                    isBlue ? "text-blue-500" : "text-yellow-500"
-                  }`}
+                  className="absolute top-4 left-6 text-[7rem] font-black opacity-[0.03]"
+                  style={{
+                    fontFamily: "'Montserrat', sans-serif",
+                    color: accent,
+                  }}
                 >
                   {workshop.number}
                 </span>
 
                 {/* Top Row */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{
+                        background: `${accent}20`,
+                      }}
+                    >
+                      <workshop.icon size={18} style={{ color: accent }} />
+                    </div>
 
-                  <span
-                    className={`text-xs font-bold px-3 py-1 rounded-full uppercase ${
-                      isBlue
-                        ? "bg-blue-500/10 text-blue-400"
-                        : "bg-yellow-500/10 text-yellow-400"
-                    }`}
-                  >
-                    {workshop.level}
-                  </span>
-
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={14}
-                        className="text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
+                    <span
+                      className="text-xs font-semibold uppercase tracking-wider"
+                      style={{ color: accent }}
+                    >
+                      {workshop.name}
+                    </span>
                   </div>
 
+                  <div
+                    className="w-16 h-16 rounded-full overflow-hidden"
+                    style={{
+                      boxShadow: `0 0 0 2px ${accent}, 0 0 20px ${accent}30`,
+                    }}
+                  >
+                    <img
+                      src={workshop.image}
+                      alt={workshop.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-bold text-2xl mb-4">
+                <h3
+                  className="font-bold text-xl md:text-2xl mb-2"
+                  style={{
+                    color: "hsl(210,20%,95%)",
+                    fontFamily: "'Montserrat', sans-serif",
+                  }}
+                >
                   {workshop.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-400 mb-6 flex-1">
+                <p
+                  className="mb-6 flex-1 text-sm whitespace-pre-line"
+                  style={{ color: "hsl(220,10%,55%)" }}
+                >
                   {workshop.desc}
                 </p>
 
-                {/* Pills */}
                 <div className="flex flex-wrap gap-3 mb-6">
-
                   <div
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm border ${
-                      isBlue
-                        ? "border-blue-400/40 text-blue-400"
-                        : "border-yellow-400/40 text-yellow-400"
-                    }`}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
+                    style={{
+                      border: `1px solid ${accent}40`,
+                      color: accent,
+                      background: `${accent}08`,
+                    }}
                   >
-                    <Clock size={14} />
+                    <Clock size={13} />
                     {workshop.duration}
                   </div>
 
-                  <div
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm border ${
-                      isBlue
-                        ? "border-blue-400/40 text-blue-400"
-                        : "border-yellow-400/40 text-yellow-400"
-                    }`}
-                  >
-                    <Users size={14} />
-                    {workshop.capacity}
-                  </div>
-
+                  {workshop.seats && (
+                    <div
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
+                      style={{
+                        border: `1px solid ${accent}40`,
+                        color: accent,
+                        background: `${accent}08`,
+                      }}
+                    >
+                      <Users size={13} />
+                      {workshop.seats}
+                    </div>
+                  )}
                 </div>
 
-                {/* Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
-                  className={`w-fit px-6 py-3 rounded-xl font-semibold flex items-center gap-2 ${
-                    isBlue
-                      ? "bg-blue-600 hover:bg-blue-500"
-                      : "bg-yellow-500 hover:bg-yellow-400 text-black"
-                  }`}
-                >
-                  Book Your Spot
-                  <ArrowRight size={16} />
-                </motion.button>
-
+               <a
+  href={workshop.link}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <motion.button
+    whileHover={{ scale: 1.04 }}
+    whileTap={{ scale: 0.97 }}
+    className="w-fit cursor-pointer px-6 py-3 rounded-xl font-semibold flex items-center gap-2 text-sm"
+    style={{
+      background: accent,
+      color: "hsl(220,20%,4%)",
+    }}
+  >
+    {workshop.cta}
+    <ArrowRight size={15} />
+  </motion.button>
+</a>
               </div>
             </motion.div>
           );
         })}
       </div>
-
-      {/* CTA */}
-      <div className="max-w-6xl mx-auto px-6 mt-24 text-center">
-
-        <Sparkles className="mx-auto mb-4 text-yellow-400" size={28} />
-
-        <h3 className="font-black text-3xl md:text-5xl mb-6">
-          Want us at your school or college?
-        </h3>
-
-        <p className="text-gray-400 mb-10 max-w-2xl mx-auto text-lg">
-          We conduct custom workshops for institutions. Let's co-create an experience your students will talk about for years.
-        </p>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-          className="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg bg-blue-600 hover:bg-blue-500"
-        >
-          Book a Workshop via Exly
-          <ArrowRight size={18} />
-        </motion.button>
-
-      </div>
     </section>
   );
 }
+

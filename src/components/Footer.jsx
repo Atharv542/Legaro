@@ -1,11 +1,10 @@
 import { Instagram, Linkedin, Twitter, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
-import officeImage from "../assets/officeImage.png";
+import officeImage from "../assets/office2.png";
 
 const navLinks = [
   { label: "Home", href: "#home", type: "scroll" },
   { label: "About", href: "#about", type: "scroll" },
-  { label: "Team", href: "#team", type: "scroll" },
   { label: "Workshops", href: "#workshops", type: "scroll" },
   { label: "Kid Fluencer Deck", href: "/kidfluencer-deck", type: "route" },
 ];
@@ -94,27 +93,17 @@ export default function Footer() {
 
             <ul className="space-y-3 mb-6">
 
-              <li>
-                <div className="text-xs text-[hsl(220,10%,55%)]/70 mb-0.5">
-                  WhatsApp
-                </div>
-                <a
-                  href="https://wa.me/919999999999"
-                  className="text-sm text-[hsl(220,10%,55%)] hover:text-[hsl(210,100%,56%)] transition-colors"
-                >
-                  +91 99999 99999
-                </a>
-              </li>
+              
 
               <li>
                 <div className="text-xs text-[hsl(220,10%,55%)]/70 mb-0.5">
                   Email
                 </div>
                 <a
-                  href="mailto:hello@legaro.in"
+                  href="legaropvtltd@gmail.com"
                   className="text-sm text-[hsl(220,10%,55%)] hover:text-[hsl(210,100%,56%)] transition-colors"
                 >
-                  hello@legaro.in
+                  legaropvtltd@gmail.com
                 </a>
               </li>
 
@@ -123,10 +112,10 @@ export default function Footer() {
                   Instagram
                 </div>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/legaro.co/"
                   className="text-sm text-[hsl(220,10%,55%)] hover:text-[hsl(210,100%,56%)] transition-colors"
                 >
-                  @legaro
+                  @legaro.co
                 </a>
               </li>
 

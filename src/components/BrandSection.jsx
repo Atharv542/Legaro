@@ -1,45 +1,44 @@
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import brandsBg from "../assets/brands-bg.jpg";
+
+import brandsBg from "../assets/brands-bg1.jpg";
+
+import lenskartLogo from "../assets/lenskart.png";
+import littlejoysLogo from "../assets/littlejoys.png";
+import troovyLogo from "../assets/troovy.png";
+import axismaxlifeLogo from "../assets/axismaxlife.png";
+import noiseLogo from "../assets/noise.png";
+import cococoloursLogo from "../assets/cococolours.png";
 
 const brandsRow1 = [
-  { name: "Little Joys", color: "#00C853", emoji: "🌿" },
-  { name: "Troovy", color: "#4285F4", emoji: "🔷" },
-  { name: "Axis Max Life", color: "#ED1C24", emoji: "❤️" },
-  { name: "Lenskart", color: "#00AEEF", emoji: "👓" },
-  { name: "Noise Junior", color: "#1E73FF", emoji: "🎧" },
-  { name: "Coco Colours", color: "#F9A825", emoji: "🎨" },
+  { name: "Little Joys", color: "#00C853", logo: littlejoysLogo },
+  { name: "Troovy", color: "#4285F4", logo: troovyLogo },
+  { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
+  { name: "Lenskart", color: "#00AEEF", logo: lenskartLogo },
+  { name: "Noise", color: "#1E73FF", logo: noiseLogo },
+  { name: "Coco Colours", color: "#F9A825", logo: cococoloursLogo },
 ];
 
 const brandsRow2 = [
-  { name: "Lenskart", color: "#00AEEF", emoji: "👓" },
-  { name: "Little Joys", color: "#00C853", emoji: "🌿" },
-  { name: "Noise Junior", color: "#1E73FF", emoji: "🎧" },
-  { name: "Axis Max Life", color: "#ED1C24", emoji: "❤️" },
-  { name: "Coco Colours", color: "#F9A825", emoji: "🎨" },
-  { name: "Troovy", color: "#4285F4", emoji: "🔷" },
+  { name: "Lenskart", color: "#00AEEF", logo: lenskartLogo },
+  { name: "Little Joys", color: "#00C853", logo: littlejoysLogo },
+  { name: "Noise", color: "#1E73FF", logo: noiseLogo },
+  { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
+  { name: "Coco Colours", color: "#F9A825", logo: cococoloursLogo },
+  { name: "Troovy", color: "#4285F4", logo: troovyLogo },
 ];
 
-
-
-export default function BrandsSection() {
+export default function BrandsSection() { 
   const navigate = useNavigate();
 
   return (
-    <section
-      id="brands"
-      className="py-28 relative overflow-hidden border-t"
-      style={{
-        background: "hsl(220,20%,6%)",
-        borderColor: "hsl(220,16%,16%)",
-        color: "hsl(210,20%,95%)",
-      }}
-    >
+    <section className="relative overflow-hidden bg-[#0c0f17] text-gray-200 border-t border-gray-800">
+
       {/* Background texture */}
       <div
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `url(${brandsBg})`,
           backgroundSize: "cover",
@@ -47,154 +46,108 @@ export default function BrandsSection() {
         }}
       />
 
-      {/* BLUE GLOW */}
+      {/* Blue glow */}
       <motion.div
-        className="absolute top-[-80px] left-[-80px] w-[500px] h-[500px] rounded-full blur-[120px]"
-        style={{ background: "hsl(217,70%,50%)", opacity: 0.09 }}
-        animate={{ scale: [1, 1.15, 1], opacity: [0.09, 0.13, 0.09] }}
+        className="absolute top-[-120px] left-[-120px] w-[600px] h-[600px] rounded-full blur-[160px]"
+        style={{ background: "#2563eb", opacity: 0.1 }}
+        animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.15, 0.1] }}
         transition={{ duration: 8, repeat: Infinity }}
       />
 
-      {/* ORANGE GLOW */}
+      {/* Orange glow */}
       <motion.div
-        className="absolute bottom-[-120px] right-[-120px] w-[500px] h-[500px] rounded-full blur-[140px]"
-        style={{ background: "hsl(38,95%,55%)", opacity: 0.09 }}
-        animate={{ scale: [1, 1.2, 1], opacity: [0.09, 0.13, 0.09] }}
+        className="absolute bottom-[-150px] right-[-150px] w-[600px] h-[600px] rounded-full blur-[180px]"
+        style={{ background: "#f59e0b", opacity: 0.1 }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }}
         transition={{ duration: 10, repeat: Infinity }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Badge */}
-        <div className="flex justify-center mb-8">
-          <div
-            className="flex items-center gap-2 px-5 py-1.5 rounded-full text-sm border"
-            style={{
-              borderColor: "hsla(38,92%,55%,0.35)",
-              color: "hsl(38,92%,65%)",
-              background: "hsla(38,92%,55%,0.07)",
-            }}
-          >
-            <Sparkles size={13} />
-            Trusted Partners
-          </div>
-        </div>
+        <motion.div
+          className="flex justify-center mb-12 pt-28"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+         
+        </motion.div>
 
-        {/* Heading */}
-        <h2 className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          <span className="block">Powering Growth for</span>
-
-          <span
-            className="block mt-2"
-            style={{
-              background:
-                "linear-gradient(100deg, hsl(38,92%,60%), hsl(217,70%,65%), hsl(280,60%,80%))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            World-Class Brands
-          </span>
-        </h2>
-
-        <p className="text-center mt-5 max-w-xl mx-auto text-base text-gray-400">
-          Legaro collaborates with visionary brands and creators to build
-          meaningful partnerships and campaigns that truly move the needle.
-        </p>
-
-        
-
-        {/* Carousel Row 1 */}
-        <div className="overflow-hidden mt-14">
+        {/* Row 1 */}
+        <div className="overflow-hidden">
           <motion.div
-            className="flex gap-5"
+            className="flex gap-6"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
           >
             {[...brandsRow1, ...brandsRow1].map((brand, i) => (
-              <BrandPill key={i} brand={brand} />
+              <BrandCard key={`r1-${i}`} brand={brand} />
             ))}
           </motion.div>
         </div>
 
-        {/* Carousel Row 2 */}
-        <div className="overflow-hidden mt-5">
+        {/* Row 2 */}
+        <div className="overflow-hidden mt-6">
           <motion.div
-            className="flex gap-5"
+            className="flex gap-6"
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, duration: 26, ease: "linear" }}
+            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
           >
             {[...brandsRow2, ...brandsRow2].map((brand, i) => (
-              <BrandPill key={i} brand={brand} />
+              <BrandCard key={`r2-${i}`} brand={brand} />
             ))}
           </motion.div>
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center gap-5 mt-16 flex-wrap">
-
+        <motion.div
+          className="flex justify-center mt-16 pb-28"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <button
-            className="flex cursor-pointer items-center gap-2 px-7 py-3 rounded-xl font-semibold"
-            style={{
-              background: "hsl(38,92%,55%)",
-              color: "black",
-            }}
-          >
-            <Phone size={16} />
-            Book 1:1 Call
-            <ArrowRight size={16} />
-          </button>
-
-          <button
-            className="flex items-center gap-2 px-7 py-3 hover:border hover:border-[#F6A926]/50 hover:bg-[#F6A926]/5 rounded-xl border border-[#45528d] cursor-pointer font-semibold transition"
             onClick={() => navigate("/kidfluencer-deck")}
+            className="flex cursor-pointer items-center gap-2 px-8 py-3 rounded-xl font-semibold text-yellow-400 border border-yellow-500/50 bg-yellow-500/10 hover:bg-yellow-500/20 hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] transition"
           >
-            View Kidfluencer Deck
-            <ArrowRight size={16} />
+            Meet Our Talents
+            <ArrowRight size={18} />
           </button>
-
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function BrandPill({ brand }) {
+function BrandCard({ brand }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <motion.div
-      className="relative min-w-[190px] flex items-center gap-3 px-5 py-3 rounded-xl cursor-pointer"
+      className="min-w-[260px] h-[120px] flex items-center justify-center px-8 rounded-xl cursor-pointer bg-[#121622]/70 border border-white/10 backdrop-blur-lg transition"
       style={{
-        background: hovered ? "hsl(220,18%,12%)" : "hsl(220,18%,9%)",
-        border: `1px solid ${
-          hovered ? brand.color + "55" : "hsl(220,16%,15%)"
-        }`,
+        borderColor: hovered ? `${brand.color}55` : undefined,
+        boxShadow: hovered
+          ? `0 0 30px ${brand.color}20, inset 0 0 30px ${brand.color}10`
+          : undefined,
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      whileHover={{ y: -2 }}
+      whileHover={{ scale: 1.05, y: -4 }}
     >
-      {/* Color dot */}
-      <span
-        className="w-2.5 h-2.5 rounded-full"
+      <img
+        src={brand.logo}
+        alt={brand.name}
+        className="min-h-[100px] min-w-[100px] object-contain"
         style={{
-          background: brand.color,
-          boxShadow: `0 0 8px ${brand.color}`,
+         filter: hovered
+  ? brand.name === "Axis Max Life"
+    ? "brightness(0) saturate(100%) invert(19%) sepia(96%) saturate(7472%) hue-rotate(356deg) brightness(95%) contrast(118%)"
+    : "brightness(1) saturate(1)"
+  : "brightness(0) invert(1) opacity(0.7)",
         }}
       />
-
-      {/* Emoji */}
-      <span>{brand.emoji}</span>
-
-      {/* Name */}
-      <span
-        className="font-semibold text-sm"
-        style={{ color: hovered ? brand.color : "#d1d5db" }}
-      >
-        {brand.name}
-      </span>
     </motion.div>
   );
 }
