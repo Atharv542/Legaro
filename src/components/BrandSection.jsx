@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import brandsBg from "../assets/brands-bg1.jpg";
 import littlejoysLogo from "../assets/Little Joys.png";
 import axismaxlifeLogo from "../assets/Axis.png";
-import noiseLogo from "../assets/Noise.png";
 import cococoloursLogo from "../assets/Coco.png";
 
 const brandsRow1 = [
@@ -14,14 +13,14 @@ const brandsRow1 = [
   { name: "Troovy", color: "#4285F4", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584419/Troovy_zpvzpn.png" },
   { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
   { name: "Lenskart", color: "#00AEEF", logo:"https://res.cloudinary.com/djkmvvviu/image/upload/v1773584566/Lenskart_s5fnue.png" },
-  { name: "Noise", color: "#1E73FF", logo: noiseLogo },
+  { name: "Noise", color: "#1E73FF", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584685/Noise_eiyo1s.png" },
   { name: "Coco Colours", color: "#F9A825", logo: cococoloursLogo },
 ];
 
 const brandsRow2 = [
   { name: "Lenskart", color: "#00AEEF", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584566/Lenskart_s5fnue.png" },
   { name: "Little Joys", color: "#00C853", logo: littlejoysLogo },
-  { name: "Noise", color: "#1E73FF", logo: noiseLogo },
+  { name: "Noise", color: "#1E73FF", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584685/Noise_eiyo1s.png" },
   { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
   { name: "Coco Colours", color: "#F9A825", logo: cococoloursLogo },
   { name: "Troovy", color: "#4285F4", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584419/Troovy_zpvzpn.png" },
