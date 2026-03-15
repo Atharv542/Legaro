@@ -551,10 +551,10 @@ function InquiryModal({ selectedKids, onClose }) {
 
   emailjs
     .send(
-      "YOUR_SERVICE_ID",     // from EmailJS
-      "YOUR_TEMPLATE_ID",    // from EmailJS
+      "service_7zqkcd9",     // from EmailJS
+      "template_hd0tdrq",    // from EmailJS
       templateParams,
-      "YOUR_PUBLIC_KEY"      // from EmailJS
+      "9JXku8pXwijojS23P"      // from EmailJS
     )
     .then(
       () => {
