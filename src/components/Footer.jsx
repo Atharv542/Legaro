@@ -6,7 +6,7 @@ const navLinks = [
   { label: "Home", href: "#home", type: "scroll" },
   { label: "About", href: "#about", type: "scroll" },
   { label: "Workshops", href: "#workshops", type: "scroll" },
-  { label: "Meet Our Talent", href: "/kidfluencer-deck", type: "route" },
+  { label: "Meet Our Talents", href: "/kidfluencer-deck", type: "route" },
 ];
 
 export default function Footer() {
@@ -134,15 +134,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Legaro Pvt Ltd. All rights reserved.
           </p>
 
-          <p className="text-xs text-[hsl(220,10%,55%)] flex items-center gap-1">
-            Made with{" "}
-            <Heart
-              size={11}
-              fill="hsl(38,95%,55%)"
-              color="hsl(38,95%,55%)"
-            />{" "}
-            for young entrepreneurs
-          </p>
+         
 
         </div>
 

@@ -855,7 +855,7 @@ export default function KidfluencerDeck() {
       <div className="  top-0 flex justify-between px-6 py-4 border-b border-neutral-800">
 
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => navigate('/')}
           className="flex items-center gap-2 text-neutral-400"
         >
           <ChevronLeft size={18} />

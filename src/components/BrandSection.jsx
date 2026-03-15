@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 
 import brandsBg from "../assets/brands-bg1.jpg";
 
-import lenskartLogo from "../assets/lenskart.png";
-import littlejoysLogo from "../assets/littlejoys.png";
-import troovyLogo from "../assets/troovy.png";
-import axismaxlifeLogo from "../assets/axismaxlife.png";
-import noiseLogo from "../assets/noise.png";
-import cococoloursLogo from "../assets/cococolours.png";
+import lenskartLogo from "../assets/Lenskart.png";
+import littlejoysLogo from "../assets/Little Joys.png";
+import troovyLogo from "../assets/Troovy.png";
+import axismaxlifeLogo from "../assets/Axis.png";
+import noiseLogo from "../assets/Noise.png";
+import cococoloursLogo from "../assets/Coco.png";
 
 const brandsRow1 = [
   { name: "Little Joys", color: "#00C853", logo: littlejoysLogo },
@@ -91,7 +91,7 @@ export default function BrandsSection() {
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 14 : 25,
+              duration: isMobile ? 7 : 25,
               ease: "linear",
             }}
           >
@@ -108,7 +108,7 @@ export default function BrandsSection() {
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 16 : 30,
+              duration: isMobile ? 8 : 30,
               ease: "linear",
             }}
           >
@@ -156,18 +156,11 @@ function BrandCard({ brand }) {
       whileHover={{ scale: 1.05, y: -4 }}
     >
       <img
-        src={brand.logo}
-        alt={brand.name}
-        className="h-[120px] w-[120px] md:min-h-[100px] md:min-w-[100px] object-contain"
-        loading="lazy"
-        style={{
-          filter: hovered
-            ? brand.name === "Axis Max Life"
-              ? "brightness(0) saturate(100%) invert(19%) sepia(96%) saturate(7472%) hue-rotate(356deg) brightness(95%) contrast(118%)"
-              : "brightness(1) saturate(1)"
-            : "brightness(0) invert(1) opacity(0.7)",
-        }}
-      />
+  src={brand.logo}
+  alt={brand.name}
+  className="h-[80px] md:h-[90px] object-contain"
+  loading="lazy"
+/>
     </motion.div>
   );
 }
