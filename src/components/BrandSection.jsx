@@ -7,14 +7,13 @@ import brandsBg from "../assets/brands-bg1.jpg";
 
 import lenskartLogo from "../assets/Lenskart.png";
 import littlejoysLogo from "../assets/Little Joys.png";
-import troovyLogo from "../assets/Troovy.png";
 import axismaxlifeLogo from "../assets/Axis.png";
 import noiseLogo from "../assets/Noise.png";
 import cococoloursLogo from "../assets/Coco.png";
 
 const brandsRow1 = [
   { name: "Little Joys", color: "#00C853", logo: littlejoysLogo },
-  { name: "Troovy", color: "#4285F4", logo: troovyLogo },
+  { name: "Troovy", color: "#4285F4", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584419/Troovy_zpvzpn.png" },
   { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
   { name: "Lenskart", color: "#00AEEF", logo: lenskartLogo },
   { name: "Noise", color: "#1E73FF", logo: noiseLogo },
@@ -27,7 +26,7 @@ const brandsRow2 = [
   { name: "Noise", color: "#1E73FF", logo: noiseLogo },
   { name: "Axis Max Life", color: "#ED1C24", logo: axismaxlifeLogo },
   { name: "Coco Colours", color: "#F9A825", logo: cococoloursLogo },
-  { name: "Troovy", color: "#4285F4", logo: troovyLogo },
+  { name: "Troovy", color: "#4285F4", logo: "https://res.cloudinary.com/djkmvvviu/image/upload/v1773584419/Troovy_zpvzpn.png" },
 ];
 
 export default function BrandsSection() {
