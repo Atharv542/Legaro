@@ -138,12 +138,12 @@ const kids = [
     location: "Mumbai",
     followers: "2.4M",
     engagement: "10.5%",
-    platforms: ["instagram"],
+    platforms: ["instagram","youtube"],
     skills: ["OOTD"],
     badge: "👗 Style Icon",
      links:{
       instagram:"https://www.instagram.com/the_motormouth?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      
+      youtube:"https://youtube.com/@the_motormouth?si=vLiEsxK_4AoyyPpy"
     },
   },
   {
@@ -170,7 +170,7 @@ const kids = [
     image: kid8,
     niche: "Kidfluencers",
     location: "Faridabad",
-    followers: "736K",
+    followers: "735K",
     engagement: "10.5%",
     platforms: ["instagram", "youtube"],
     skills: ["OOTD"],
@@ -206,12 +206,12 @@ const kids = [
     location: "Gurgaon",
     followers: "456K",
     engagement: "10.5%",
-    platforms: ["instagram"],
+    platforms: ["instagram","youtube"],
     skills: ["OOTD"],
     badge: "👗 Style Icon",
      links:{
       instagram:"https://www.instagram.com/ishakapoor244?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-  
+      youtube:"https://youtube.com/@abhiraj.kapoor?si=uyeBjzmERi9ldiWU"
     },
   },
   {
@@ -223,22 +223,22 @@ const kids = [
     location: "Patna",
     followers: "567K",
     engagement: "10.5%",
-    platforms: ["instagram"],
+    platforms: ["instagram","youtube"],
     skills: ["OOTD"],
     badge: "👗 Style Icon",
      links:{
       instagram:"https://www.instagram.com/little.era12_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      
+      youtube:"https://youtube.com/@erasinhavlog_01?si=z-_qjiDtIorC444f"
     },
   },
   {
     id: 12,
-    name: "Chiki Mithi & Family",
+    name: "chikimithi",
     age: "12 & 6",
     image: kid12,
     niche: "Kidfluencers",
     location: "Patna",
-    followers: "414K",
+    followers: "417K",
     engagement: "10.5%",
     platforms: ["instagram", "youtube"],
     skills: ["OOTD"],
@@ -250,7 +250,7 @@ const kids = [
   },
   {
     id: 13,
-    name: "Samagra Sankalp Patel",
+    name: "littlesamagra0110",
     age: 2.5,
     image: kid13,
     niche: "Kidfluencers",
@@ -267,24 +267,24 @@ const kids = [
   },
   {
     id: 14,
-    name: "Rajatparmitaofficial",
+    name: "justcouplethings_123",
     age: 2.5,
     image: kid14,
     niche: "Kidfluencers",
     location: "Delhi",
     followers: "940K",
     engagement: "10.5%",
-    platforms: ["instagram"],
+    platforms: ["instagram","youtube"],
     skills: ["OOTD"],
     badge: "👗 Style Icon",
      links:{
       instagram:"https://www.instagram.com/justcouplethings_123?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-
+      youtube:"https://youtube.com/@justcouplethings_1234?si=OshKobbwaskF3Tk_"
     },
   },
   {
     id: 15,
-    name: "Nivu and Vayu",
+    name: "nivuandvayu",
     age: "3.5 & 2",
     image: kid15,
     niche: "Kidfluencers",
@@ -301,7 +301,7 @@ const kids = [
   },
   {
     id: 16,
-    name: "Laddu Panwar",
+    name: "laddu_panwar14",
     age: 4.5,
     image: kid16,
     niche: "Kidfluencers",
@@ -318,7 +318,7 @@ const kids = [
   },
   {
     id: 17,
-    name: "Nira Choudhary",
+    name: "priyanka_niraa",
     age: 2.5,
     image: kid17,
     niche: "Kidfluencers",
@@ -335,7 +335,7 @@ const kids = [
   },
   {
     id: 18,
-    name: "Arun Tomar",
+    name: "thedanikachaudhary",
     age: 7,
     image: kid18,
     niche: "Kidfluencers",
@@ -352,7 +352,7 @@ const kids = [
   },
   {
     id: 19,
-    name: "Ankit Ambedkar Banda",
+    name: "ankitambedkarbanda",
     age: 25,
     image: kid19,
     niche: "Kidfluencers",
@@ -369,12 +369,12 @@ const kids = [
   },
   {
     id: 20,
-    name: "Tanya Agarwal",
+    name: "tanyas_vanity",
     age: 3,
     image: kid20,
     niche: "Kidfluencers",
     location: "Mumbai",
-    followers: "70.9K",
+    followers: "70.8K",
     engagement: "10.5%",
     platforms:["instagram", "youtube"],
     skills: ["OOTD"],
@@ -386,7 +386,7 @@ const kids = [
   },
     {
     id: 21,
-    name: "Anuj Paul",
+    name: "anujpaul4",
     age: 38,
     image: kid21,
     niche: "Finance",
@@ -398,13 +398,13 @@ const kids = [
     badge: "👗 Style Icon",
      links:{
       instagram:"https://www.instagram.com/anujpaul4?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      
+      youtube:"https://youtube.com/@myfundboxfinserv?si=0LgbQ4GYUavDoaU7"
     },
   },
 
    {
     id: 22,
-    name: "Tamanna Sharma",
+    name: "tee_.writes",
     age: 19,
     image: kid22,
     niche: "Storyteller",

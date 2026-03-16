@@ -51,7 +51,7 @@ const workshops = [
   },
   {
     title: "1:1 Edit Call",
-    desc: "If you truly want to learn motion graphics, also the tips and tricks to do them fast — he's the one to learn from.",
+    desc: "If you truly want to learn motion graphics, also the tips and tricks to do them fast - he's the one to learn from.",
     duration: null,
     seats: null,
     cta: "Book Now",
