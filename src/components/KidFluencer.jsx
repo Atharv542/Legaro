@@ -15,7 +15,8 @@ import {
   ArrowRight,
   Building2,
   Phone,
-  Mail
+  Mail,
+  ListFilter
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -426,6 +427,17 @@ const kids = [
 
 const NICHES = ["All", "Kidfluencers", "Finance", "Storyteller"];
 
+/* HELPER: convert 1.8M / 902K to number */
+
+function parseFollowers(str) {
+  const cleaned = str.trim().toUpperCase();
+
+  if (cleaned.endsWith("M")) return parseFloat(cleaned) * 1000000;
+  if (cleaned.endsWith("K")) return parseFloat(cleaned) * 1000;
+
+  return parseFloat(cleaned) || 0;
+}
+
 /* PLATFORM ICON */
 
 function PlatformIcon({ platform, link }) {
@@ -832,13 +844,40 @@ export default function KidfluencerDeck() {
   const [selected, setSelected] = useState([]);
   const [activeNiche, setActiveNiche] = useState("All");
   const [showModal, setShowModal] = useState(false);
+const [sortOrder, setSortOrder] = useState("default"); 
+const [showSortMenu, setShowSortMenu] = useState(false);
+const sortLabel =
+  sortOrder === "high"
+    ? "Highest → Lowest"
+    : sortOrder === "low"
+    ? "Lowest → Highest"
+    : "Sort by Followers";
+  const isSorted = sortOrder !== "default";
 
-  const filtered =
+const filtered = (() => {
+
+  let result =
     activeNiche === "All"
-      ? kids
+      ? [...kids]
       : kids.filter((k) =>
           k.niche.toLowerCase().includes(activeNiche.toLowerCase())
         );
+
+  if (sortOrder === "high") {
+    result.sort(
+      (a, b) => parseFollowers(b.followers) - parseFollowers(a.followers)
+    );
+  }
+
+  if (sortOrder === "low") {
+    result.sort(
+      (a, b) => parseFollowers(a.followers) - parseFollowers(b.followers)
+    );
+  }
+
+  return result;
+
+})();
 
   const toggleSelect = (kid) => {
     setSelected((prev) =>
@@ -883,7 +922,8 @@ export default function KidfluencerDeck() {
       </div>
 
       {/* FILTER */}
-      <div className="flex justify-center gap-2 mb-10 flex-wrap">
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 gap-4 mb-10">
+       <div className="flex flex-wrap justify-center md:justify-start gap-2">
         {NICHES.map((n) => (
           <button
             key={n}
@@ -897,8 +937,67 @@ export default function KidfluencerDeck() {
           >
             {n}
           </button>
+          
         ))}
+
+      
       </div>
+      <div className="relative md:ml-auto">
+
+  <button
+  onClick={() => setShowSortMenu((prev) => !prev)}
+  className={`flex items-center gap-2 px-4 py-1 rounded-full text-sm cursor-pointer transition-colors
+  ${
+    isSorted
+      ? "bg-amber-400 text-black font-semibold"
+      : "bg-neutral-900 border border-neutral-800 text-neutral-400 hover:border-amber-400/40"
+  }`}
+>
+  <ListFilter size={14} />
+  {sortLabel}
+</button>
+
+  {showSortMenu && (
+    <div className="absolute right-0 mt-2 w-44 bg-neutral-900 border border-neutral-800 rounded-xl shadow-lg overflow-hidden z-20">
+
+      <button
+        onClick={() => {
+          setSortOrder("high");
+          setShowSortMenu(false);
+        }}
+        className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-800"
+      >
+        Highest → Lowest
+      </button>
+
+      <button
+        onClick={() => {
+          setSortOrder("low");
+          setShowSortMenu(false);
+        }}
+        className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-800"
+      >
+        Lowest → Highest
+      </button>
+
+      <button
+        onClick={() => {
+          setSortOrder("default");
+          setShowSortMenu(false);
+        }}
+        className="w-full text-left px-4 py-2 text-sm hover:bg-neutral-800"
+      >
+        Default
+      </button>
+
+    </div>
+  )}
+
+</div>
+      </div>
+     
+
+       
 
       {/* GRID */}
       <div className="max-w-7xl mx-auto px-6 pb-24">

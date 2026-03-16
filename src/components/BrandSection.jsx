@@ -83,11 +83,11 @@ export default function BrandsSection() {
         {/* Row 1 */}
         <div className="overflow-hidden pt-24">
           <motion.div
-            className="flex gap-4 md:gap-6 will-change-transform transform-gpu"
+            className="flex gap-4 md:gap-6 will-change-transform transform-gpu translate-z-0"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 7 : 25,
+              duration: isMobile ? 4 : 25,
               ease: "linear",
             }}
           >
@@ -104,7 +104,7 @@ export default function BrandsSection() {
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               repeat: Infinity,
-              duration: isMobile ? 8 : 30,
+              duration: isMobile ? 5 : 30,
               ease: "linear",
             }}
           >
@@ -140,7 +140,7 @@ function BrandCard({ brand }) {
 
   return (
     <motion.div
-      className="min-w-[180px] md:min-w-[260px] h-[110px] md:h-[120px] flex items-center justify-center px-6 md:px-8 rounded-xl cursor-pointer bg-[#121622]/70 border border-white/10 backdrop-blur-lg transition"
+      className="min-w-[120px] md:min-w-[260px] h-[110px] md:h-[120px] flex items-center justify-center px-6 md:px-8 rounded-xl cursor-pointer bg-[#121622]/70 border border-white/10 backdrop-blur-lg transition"
       style={{
         borderColor: hovered ? `${brand.color}55` : undefined,
         boxShadow: hovered
@@ -154,7 +154,7 @@ function BrandCard({ brand }) {
       <img
   src={brand.logo}
   alt={brand.name}
-  className="h-[80px] md:h-[90px] object-contain"
+  className="h-[40px] md:h-[90px] object-contain"
   loading="lazy"
 />
     </motion.div>
