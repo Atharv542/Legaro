@@ -128,6 +128,7 @@ export default function AboutSection() {
                 style={{
                   background: "hsl(220,18%,9%)",
                   border: "1px solid hsl(220,16%,16%)",
+                  "--accent": item.accent
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = `${item.accent}50`;
@@ -163,7 +164,7 @@ export default function AboutSection() {
                       fontFamily: "'Montserrat', sans-serif",
                     }}
                   >
-                    <span className="group-hover:text-[hsl(210,100%,56%)] transition-colors duration-300">
+                    <span className="transition-colors duration-300 group-hover:text-[var(--accent)]">
                       {item.title}
                     </span>
                   </h3>

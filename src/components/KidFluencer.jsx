@@ -587,13 +587,13 @@ function InquiryModal({ selectedKids, onClose }) {
       exit={{ opacity: 0 }}
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <motion.div
-        initial={{ y: 80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 80, opacity: 0 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
-        className="bg-neutral-950 border border-neutral-800 rounded-t-3xl sm:rounded-3xl w-full sm:max-w-lg overflow-hidden"
-      >
+    <motion.div
+  initial={{ y: 80, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  exit={{ y: 80, opacity: 0 }}
+  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+  className="bg-neutral-950 border border-neutral-800 rounded-t-3xl sm:rounded-3xl w-full sm:max-w-lg max-h-[90vh] overflow-y-auto no-scrollbar"
+>
 
         {/* HEADER */}
 
@@ -739,7 +739,7 @@ function InquiryModal({ selectedKids, onClose }) {
                   />
 
                   <input
-                    placeholder="+91 98765 43210"
+                    placeholder="Enter your phone number"
                     required
                     className="w-full bg-neutral-900 border border-neutral-800 text-neutral-200 text-sm pl-10 pr-4 py-3 rounded-xl focus:outline-none focus:border-amber-400"
                     onChange={(e) =>

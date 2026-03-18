@@ -22,7 +22,7 @@ const workshops = [
     number: "01",
     image: shivamImg,
     name: "Shivam Garg",
-    icon: Video,
+    
   },
   {
     title: "Be Independent",
@@ -35,7 +35,7 @@ const workshops = [
     number: "02",
     image: shivamImg,
     name: "Shivam Garg",
-    icon: Sparkles,
+    
   },
   {
     title: "1:1 Call",
@@ -191,14 +191,7 @@ export default function WorkshopsSection() {
                 {/* Top Row */}
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    {workshop.icon && (
-                      <div
-                        className="w-10 h-10 rounded-xl flex items-center justify-center"
-                        style={{ background: `${accent}20` }}
-                      >
-                        <workshop.icon size={18} style={{ color: accent }} />
-                      </div>
-                    )}
+                   
 
                     <span
                       className="text-xs font-semibold uppercase tracking-wider"
